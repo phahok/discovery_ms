@@ -16,3 +16,7 @@ Criação e inclusão de chave SSH no Azure, caso não exista:
 1. Clonar o repositório discovery_ms do azure repos
 [a link] (https://JoseRenatoFerreira@dev.azure.com/JoseRenatoFerreira/SAS_MS_TEAM/_git/discovery_ms)
 
+- Opções para clone: HTTPS ou SSH
+
+
+
