@@ -1,0 +1,1 @@
+Status do Firewall#    Active: inactive (dead)

@@ -1,0 +1,14 @@
+Configuracoes de Horario# Local time: Wed 2023-11-22 12:52:26 EST
+Configuracoes de Horario# Universal time: Wed 2023-11-22 17:52:26 UTC
+Configuracoes de Horario# RTC time: Wed 2023-11-22 12:52:22
+Configuracoes de Horario# Time zone: America/New_York (EST, -0500)
+Configuracoes de Horario# NTP enabled: yes
+Configuracoes de Horario# NTP synchronized: no
+Configuracoes de Horario# RTC in local TZ: no
+Configuracoes de Horario# DST active: no
+Configuracoes de Horario# Last DST change: DST ended at
+Configuracoes de Horario# Sun 2023-11-05 01:59:59 EDT
+Configuracoes de Horario# Sun 2023-11-05 01:00:00 EST
+Configuracoes de Horario# Next DST change: DST begins (the clock jumps one hour forward) at
+Configuracoes de Horario# Sun 2024-03-10 01:59:59 EST
+Configuracoes de Horario# Sun 2024-03-10 03:00:00 EDT

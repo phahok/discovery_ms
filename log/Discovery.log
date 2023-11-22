@@ -1,0 +1,771 @@
+1                                                          The SAS System                         12:52 Wednesday, November 22, 2023
+
+NOTE: Copyright (c) 2023 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M8) 
+      Licensed to DemoCenter - VAVS7.5AnalyticsProd - 23W05 - 2Tier, Site 70068118.
+NOTE: This session is executing on the Linux 3.10.0-1160.88.1.el7.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.3
+      SAS/ETS 15.3
+      SAS/OR 15.3
+      SAS/IML 15.3
+      SAS/QC 15.3
+
+NOTE: Additional host information:
+
+ Linux LIN X64 3.10.0-1160.88.1.el7.x86_64 #1 SMP Tue Mar 7 15:41:52 UTC 2023 x86_64 CentOS Linux release 7.9.2009 (Core) 
+
+You are running SAS 9. Some SAS 8 files will be automatically converted 
+by the V9 engine; others are incompatible.  Please see 
+http://support.sas.com/rnd/migration/planning/platform/64bit.html
+
+PROC MIGRATE will preserve current SAS file attributes and is 
+recommended for converting all your SAS libraries from any 
+SAS 8 release to SAS 9.  For details and examples, please see
+http://support.sas.com/rnd/migration/index.html
+
+
+This message is contained in the SAS news file, and is presented upon
+initialization.  Edit the file "news" in the "misc/base" directory to
+display site-specific news and information in the program log.
+The command line option "-nonews" will prevent this display.
+
+
+
+
+NOTE: SAS initialization used:
+      real time           0.02 seconds
+      cpu time            0.02 seconds
+      
+1          options symbolgen mprint mlogic;
+2          filename rwiOut ".";
+3          ods html close;
+4          ods html path=rwiOut file="Discovery.html" dom;
+NOTE: Writing HTML Body file: Discovery.html
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>ODS HTML4 DOM</title>
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <div dest="html4" class="table">
+   </div>
+   <div dest="html4" class="batch">
+   </div>
+   <div dest="html4" class="graph">
+   </div>
+2                                                          The SAS System                         12:52 Wednesday, November 22, 2023
+
+   <div dest="html4" class="byline">
+   </div>
+   <div dest="html4" class="systitleandfootercontainer">
+   </div>
+   <div dest="html4" class="note">
+   </div>
+   <div dest="html4" class="systitleandfootercontainer">
+   </div>
+   <div dest="html4" class="systitleandfootercontainer">
+   </div>
+   <body dest="html4" class="body">
+      <div>
+      </div>
+      <body class="startupfunction">
+      </body>
+      <body class="shutdownfunction">
+      </body>
+      <div class="body">
+5          %include "/home/sas/discovery_ms/ProgramaSAS/tab_infoServidor.sas";
+
+NOTE: The data set WORK.INFOCPU has 5 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+         <div>
+         </div>
+         <section id="idx" class="oo" data-name="procprinttable" label="data set work.infocpu" proc="print" output="print" 
+contents-label="data set work.infocpu" path="print.print">
+            <h1 class="systemtitle">
+            </h1>
+            <table class="systitleandfootercontainer">
+               <colgroup>
+                  <col>
+               </colgroup>
+               <tr>
+                  <td class="systemtitle">Informacoes do Servidor - SASSERVER.DEMO.SAS.COM
+                  </td>
+               </tr>
+            </table>
+            <h1 class="systemtitle">
+            </h1>
+            <table class="systitleandfootercontainer">
+               <colgroup>
+                  <col>
+               </colgroup>
+               <tr>
+                  <td class="systemtitle">Informacoes do Servidor - SASSERVER.DEMO.SAS.COM
+                  </td>
+               </tr>
+            </table>
+            <ul class="contentprocname">
+            </ul>
+            <div class="contentprocname" target="body" url="discovery.html#idx">
+               <ul class="contentproclabel">
+               </ul>
+3                                                          The SAS System                         12:52 Wednesday, November 22, 2023
+
+               <ul class="contentitem">
+               </ul>
+               <div class="contentitem" target="body" url="discovery.html#idx">
+               </div>
+               <div>
+               </div>
+               <div class="data">
+               </div>
+               <table class="table">
+                  <colgroup>
+                     <col type="char" name="descricao">
+                     <col type="char" name="informacoes">
+                     <div>
+                     </div>
+                     <div>
+                     </div>
+                     <div>
+                     </div>
+                  </colgroup>
+                  <thead>
+                     <tr>
+                        <th class="header" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">descricao
+                        </th>
+                        <th class="header" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">informacoes
+                        </th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Hostname
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">sasserver.demo.sas.com
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Tipo de Servidor
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">vm
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Virtualizacao
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">vmware
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Sistema Operacional
+                        </td>
+4                                                          The SAS System                         12:52 Wednesday, November 22, 2023
+
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">CentOS Linux release 7.9.2009 (Core)
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Versao do Kernel
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">Linux 3.10.0-1160.88.1.el7.x86_64
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </section>
+         </div>
+NOTE: There were 5 observations read from the data set WORK.INFOCPU.
+NOTE: The PROCEDURE PRINT printed page 1.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.02 seconds
+      
+
+21         %include "/home/sas/discovery_ms/ProgramaSAS/tab_infoCPU.sas";
+
+NOTE: The data set WORK.INFOCPU has 4 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+         <div>
+         </div>
+         <section id="idx1" class="oo" data-name="procprinttable" label="data set work.infocpu" proc="print" output="print" 
+contents-label="data set work.infocpu" path="print.print">
+            <div class="body">
+            </div>
+            <h1 class="systemtitle">
+            </h1>
+            <table class="systitleandfootercontainer">
+               <colgroup>
+                  <col>
+               </colgroup>
+               <tr>
+                  <td class="systemtitle">Informacoes da CPU - SASSERVER.DEMO.SAS.COM
+                  </td>
+               </tr>
+            </table>
+            <h1 class="systemtitle">
+            </h1>
+            <table class="systitleandfootercontainer">
+               <colgroup>
+                  <col>
+               </colgroup>
+               <tr>
+                  <td class="systemtitle">Informacoes da CPU - SASSERVER.DEMO.SAS.COM
+                  </td>
+5                                                          The SAS System                         12:52 Wednesday, November 22, 2023
+
+               </tr>
+            </table>
+            <ul class="contentprocname">
+            </ul>
+            <div class="contentprocname" target="body" url="discovery.html#idx1">
+               <ul class="contentproclabel">
+               </ul>
+               <ul class="contentitem">
+               </ul>
+               <div class="contentitem" target="body" url="discovery.html#idx1">
+               </div>
+               <div>
+               </div>
+               <div class="data">
+               </div>
+               <table class="table">
+                  <colgroup>
+                     <col type="char" name="descricao">
+                     <col type="char" name="informacoes">
+                     <div>
+                     </div>
+                     <div>
+                     </div>
+                     <div>
+                     </div>
+                  </colgroup>
+                  <thead>
+                     <tr>
+                        <th class="header" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">descricao
+                        </th>
+                        <th class="header" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">informacoes
+                        </th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Modelo da CPU
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">Intel(R) Xeon(R) Gold 6130 CPU @ 2.10GHz
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Total de Threads
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">1
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Total de VCores
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+6                                                          The SAS System                         12:52 Wednesday, November 22, 2023
+
+label="informacoes">4
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Total de Processadores
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">8
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </section>
+         </div>
+NOTE: There were 4 observations read from the data set WORK.INFOCPU.
+NOTE: The PROCEDURE PRINT printed page 2.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+36         %include "/home/sas/discovery_ms/ProgramaSAS/tab_infoMEM.sas";
+
+NOTE: The data set WORK.INFOMEMORIA has 2 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+         <div>
+         </div>
+         <section id="idx2" class="oo" data-name="procprinttable" label="data set work.infomemoria" proc="print" output="print" 
+contents-label="data set work.infomemoria" path="print.print">
+            <div class="body">
+            </div>
+            <h1 class="systemtitle">
+            </h1>
+            <table class="systitleandfootercontainer">
+               <colgroup>
+                  <col>
+               </colgroup>
+               <tr>
+                  <td class="systemtitle">Informacoes da Memoria - SASSERVER.DEMO.SAS.COM
+                  </td>
+               </tr>
+            </table>
+            <h1 class="systemtitle">
+            </h1>
+            <table class="systitleandfootercontainer">
+               <colgroup>
+                  <col>
+               </colgroup>
+               <tr>
+                  <td class="systemtitle">Informacoes da Memoria - SASSERVER.DEMO.SAS.COM
+                  </td>
+               </tr>
+7                                                          The SAS System                         12:52 Wednesday, November 22, 2023
+
+            </table>
+            <ul class="contentprocname">
+            </ul>
+            <div class="contentprocname" target="body" url="discovery.html#idx2">
+               <ul class="contentproclabel">
+               </ul>
+               <ul class="contentitem">
+               </ul>
+               <div class="contentitem" target="body" url="discovery.html#idx2">
+               </div>
+               <div>
+               </div>
+               <div class="data">
+               </div>
+               <table class="table">
+                  <colgroup>
+                     <col type="char" name="descricao">
+                     <col type="char" name="informacoes">
+                     <div>
+                     </div>
+                     <div>
+                     </div>
+                     <div>
+                     </div>
+                  </colgroup>
+                  <thead>
+                     <tr>
+                        <th class="header" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">descricao
+                        </th>
+                        <th class="header" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">informacoes
+                        </th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Total de Memoria RAM
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">62G
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Total de SWAP
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">799M
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </section>
+         </div>
+NOTE: There were 2 observations read from the data set WORK.INFOMEMORIA.
+NOTE: The PROCEDURE PRINT printed page 3.
+8                                                          The SAS System                         12:52 Wednesday, November 22, 2023
+
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+49         %include "/home/sas/discovery_ms/ProgramaSAS/tab_infoRede.sas";
+
+NOTE: The data set WORK.INFOREDE has 11 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+
+         <div>
+         </div>
+         <section id="idx3" class="oo" data-name="procprinttable" label="data set work.inforede" proc="print" output="print" 
+contents-label="data set work.inforede" path="print.print">
+            <div class="body">
+            </div>
+            <h1 class="systemtitle">
+            </h1>
+            <table class="systitleandfootercontainer">
+               <colgroup>
+                  <col>
+               </colgroup>
+               <tr>
+                  <td class="systemtitle">Informacoes da Rede - SASSERVER.DEMO.SAS.COM
+                  </td>
+               </tr>
+            </table>
+            <h1 class="systemtitle">
+            </h1>
+            <table class="systitleandfootercontainer">
+               <colgroup>
+                  <col>
+               </colgroup>
+               <tr>
+                  <td class="systemtitle">Informacoes da Rede - SASSERVER.DEMO.SAS.COM
+                  </td>
+               </tr>
+            </table>
+            <ul class="contentprocname">
+            </ul>
+            <div class="contentprocname" target="body" url="discovery.html#idx3">
+               <ul class="contentproclabel">
+               </ul>
+               <ul class="contentitem">
+               </ul>
+               <div class="contentitem" target="body" url="discovery.html#idx3">
+               </div>
+               <div>
+               </div>
+               <div class="data">
+               </div>
+               <table class="table">
+                  <colgroup>
+                     <col type="char" name="descricao">
+9                                                          The SAS System                         12:52 Wednesday, November 22, 2023
+
+                     <col type="char" name="informacoes">
+                     <div>
+                     </div>
+                     <div>
+                     </div>
+                     <div>
+                     </div>
+                  </colgroup>
+                  <thead>
+                     <tr>
+                        <th class="header" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">descricao
+                        </th>
+                        <th class="header" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">informacoes
+                        </th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">DNS
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">Generated by NetworkManager
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">DNS
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">search exnet.sas.com demo.sas.com
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">DNS
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">nameserver 149.173.5.54
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">DNS
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">nameserver 149.173.5.55
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Placa de Rede
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+                        </td>
+10                                                         The SAS System                         12:52 Wednesday, November 22, 2023
+
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Placa de Rede
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">inet 10.96.6.76  netmask 255.255.0.0  broadcast 10.96.255.255
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Placa de Rede
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Placa de Rede
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">inet 127.0.0.1  netmask 255.0.0.0
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Placa de Rede
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Placa de Rede
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Status do Firewall
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">Active: inactive (dead)
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </section>
+         </div>
+NOTE: There were 11 observations read from the data set WORK.INFOREDE.
+NOTE: The PROCEDURE PRINT printed page 4.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+11                                                         The SAS System                         12:52 Wednesday, November 22, 2023
+
+      
+
+71         %include "/home/sas/discovery_ms/ProgramaSAS/tab_infoDisco.sas";
+
+NOTE: The data set WORK.INFODISCO has 8 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+         <div>
+         </div>
+         <section id="idx4" class="oo" data-name="procprinttable" label="data set work.infodisco" proc="print" output="print" 
+contents-label="data set work.infodisco" path="print.print">
+            <div class="body">
+            </div>
+            <h1 class="systemtitle">
+            </h1>
+            <table class="systitleandfootercontainer">
+               <colgroup>
+                  <col>
+               </colgroup>
+               <tr>
+                  <td class="systemtitle">Informacoes do Disco - SASSERVER.DEMO.SAS.COM
+                  </td>
+               </tr>
+            </table>
+            <h1 class="systemtitle">
+            </h1>
+            <table class="systitleandfootercontainer">
+               <colgroup>
+                  <col>
+               </colgroup>
+               <tr>
+                  <td class="systemtitle">Informacoes do Disco - SASSERVER.DEMO.SAS.COM
+                  </td>
+               </tr>
+            </table>
+            <ul class="contentprocname">
+            </ul>
+            <div class="contentprocname" target="body" url="discovery.html#idx4">
+               <ul class="contentproclabel">
+               </ul>
+               <ul class="contentitem">
+               </ul>
+               <div class="contentitem" target="body" url="discovery.html#idx4">
+               </div>
+               <div>
+               </div>
+               <div class="data">
+               </div>
+               <table class="table">
+                  <colgroup>
+                     <col type="char" name="descricao">
+                     <col type="char" name="informacoes">
+                     <div>
+                     </div>
+12                                                         The SAS System                         12:52 Wednesday, November 22, 2023
+
+                     <div>
+                     </div>
+                     <div>
+                     </div>
+                  </colgroup>
+                  <thead>
+                     <tr>
+                        <th class="header" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">descricao
+                        </th>
+                        <th class="header" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">informacoes
+                        </th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Disco
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">filesystem     Type      Size  Used Avail Use%% Mounted on
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Disco
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">devtmpfs       devtmpfs   32G     0   32G   0%% /dev
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Disco
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">tmpfs          tmpfs      32G  728K   32G   1%% /dev/shm
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Disco
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">tmpfs          tmpfs      32G   19M   32G   1%% /run
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Disco
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">tmpfs          tmpfs      32G     0   32G   0%% /sys/fs/cgroup
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+13                                                         The SAS System                         12:52 Wednesday, November 22, 2023
+
+label="descricao">Disco
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">/dev/sda2      xfs       304G  101G  204G  34%% /
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Disco
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">tmpfs          tmpfs     6.3G   32K  6.3G   1%% /run/user/1002
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+label="descricao">Disco
+                        </td>
+                        <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+label="informacoes">tmpfs          tmpfs     6.3G   32K  6.3G   1%% /run/user/0
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </section>
+         </div>
+NOTE: There were 8 observations read from the data set WORK.INFODISCO.
+NOTE: The PROCEDURE PRINT printed page 5.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+90         %include "/home/sas/discovery_ms/ProgramaSAS/sasinstallreport.sas";
+WARNING: Physical file does not exist, /home/sas/discovery_ms/ProgramaSAS/sasinstallreport.sas.
+ERROR: Cannot open %INCLUDE file /home/sas/discovery_ms/ProgramaSAS/sasinstallreport.sas.
+91         ods html close;
+      </div>
+   </body>
+</html>
+92         ods html;
+NOTE: Writing HTML Body file: sashtml1.htm
+ERROR: Errors printed on page 13.
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.27 seconds
+      cpu time            0.27 seconds
+      

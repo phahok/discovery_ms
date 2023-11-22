@@ -1,0 +1,1 @@
+Modelo da CPU# Intel(R) Xeon(R) Gold 6130 CPU @ 2.10GHz

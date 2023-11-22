@@ -1,0 +1,2 @@
+Total de Memoria RAM# 62G
+Total de SWAP# 799M

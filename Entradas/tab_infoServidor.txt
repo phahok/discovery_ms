@@ -1,0 +1,5 @@
+Hostname# sasserver.demo.sas.com
+Tipo de Servidor# vm
+Virtualizacao# vmware
+Sistema Operacional# CentOS Linux release 7.9.2009 (Core)
+Versao do Kernel# Linux 3.10.0-1160.88.1.el7.x86_64

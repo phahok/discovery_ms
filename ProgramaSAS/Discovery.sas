@@ -1,0 +1,12 @@
+options symbolgen mprint mlogic;
+filename rwiOut ".";
+ods html close;
+ods html path=rwiOut file="Discovery.html" dom;
+%include "/home/sas/discovery_ms/ProgramaSAS/tab_infoServidor.sas";
+%include "/home/sas/discovery_ms/ProgramaSAS/tab_infoCPU.sas";
+%include "/home/sas/discovery_ms/ProgramaSAS/tab_infoMEM.sas";
+%include "/home/sas/discovery_ms/ProgramaSAS/tab_infoRede.sas";
+%include "/home/sas/discovery_ms/ProgramaSAS/tab_infoDisco.sas";
+%include "/home/sas/discovery_ms/ProgramaSAS/sasinstallreport.sas";
+ods html close;
+ods html;

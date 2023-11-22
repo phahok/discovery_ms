@@ -1,0 +1,1 @@
+Versao do Kernel# Linux 3.10.0-1160.88.1.el7.x86_64
