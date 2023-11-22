@@ -9,7 +9,7 @@ servidores=("sasserver.demo.sas.com") #Lista dos servidores do ambiente
 dtExec="`date '+%d%m%Y_%H%M'`"
 
 #Include de funcoes
-dir_modulos=/home/sas/discovery_ms
+dir_modulos=/tmp/discovery_ms
 dir_Entradas=$dir_modulos/Entradas
 dir_pgmSAS=$dir_modulos/ProgramaSAS
 logScript=$dir_modulos/log
