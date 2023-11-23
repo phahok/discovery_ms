@@ -28,10 +28,12 @@ echo "filename rwiOut \".\";" >> $1
 echo "ods html close;" >> $1
 echo "ods html path=rwiOut file=\"$2\" dom;" >> $1
 	
-	echo "data _null_;" >> $1
+	echo "data cabecalho;" >> $1
+ 	echo "input dt_report;" >> $1
 	echo "call symput("dt_atual", today());" >> $1
+ 	echo "dt_report = &dt_atual.;" >> $1
 	echo "run;" >> $1
-	echo "%put &dt_atual.;" >> $1
+	echo "proc print data = cabecalho; run;" >> $1
 
         $relat_HDW  >> $1
         $relat_CPU >> $1
