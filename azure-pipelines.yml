@@ -1,0 +1,56 @@
+# Pipeline publish report ms artifact clients 
+# Developer : José Renato ( DevOps Architect SAS )
+
+trigger:
+- master
+
+stages:
+- stage: Preparando_ambiente
+  pool:
+    vmImage: "ubuntu-latest"
+  jobs:
+  - job: Pre_reqs_install
+    steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.x'
+        addToPath: true
+        architecture: 'x64'
+
+    - script: |
+        pip -V
+        python -V
+      displayName: 'check version'
+
+    - task: Bash@3
+      inputs:
+        targetType: 'inline'
+        script: |
+          pip install openpyxl
+          pip freeze | grep pyxl
+          echo -e
+          date
+      displayName: 'Install openpyxl agent'
+    - task: Bash@3
+      inputs:
+        targetType: 'inline'
+        script: |
+          echo --- Listando discovery reports 
+          ls -l *.html
+        workingDirectory: '$(Build.SourcesDirectory)'
+      displayName: 'List reports '
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: '$(Build.SourcesDirectory)'
+        Contents: '**/*.html'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    
+# save baseRDO transfer Area
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathToPublish: '$(Build.ArtifactStagingDirectory)'
+        artifactName: Report_ms
+      displayName: 'Publish report discovery ms'
+
+
+        
