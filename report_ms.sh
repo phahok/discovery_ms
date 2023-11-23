@@ -14,13 +14,12 @@ checkpath(){
 if [ -d "$_workspace" ]; then
         echo "Workspace temp '$_workspace' encontrada, efetuando limpeza ...!"
         rm -rf /tmp/$pathtmp
-        cd /tmp; git clone https://github.com/phahok/discovery_ms.git
+        cd /tmp; git clonegit@github.com:phahok/discovery_ms.git
 else
         echo "Baixando repo Discovery MS em '$_workspace' ...!"
         echo -e
         echo "Criando WorkSpace Discovery MS "
-        #cd /tmp; git clone git@ssh.dev.azure.com:v3/JoseRenatoFerreira/SAS_MS_TEAM/discovery_ms
-        cd /tmp; git clone https://github.com/phahok/discovery_ms.git
+        cd /tmp; git clone git@github.com:phahok/discovery_ms.git
 fi
 }
 
