@@ -42,13 +42,13 @@ stages:
         targetType: 'inline'
         script: |
           echo --- Listando discovery reports 
-          ls -l *.html
+          ls -l *.pdf
         workingDirectory: '$(Build.SourcesDirectory)'
       displayName: 'List reports '
     - task: CopyFiles@2
       inputs:
         SourceFolder: '$(Build.SourcesDirectory)'
-        Contents: '**/*.html'
+        Contents: '**/*.pdf'
         TargetFolder: '$(Build.ArtifactStagingDirectory)'
     
 # save baseRDO transfer Area
