@@ -1,4 +1,4 @@
-1                                                          The SAS System                          08:31 Thursday, November 23, 2023
+1                                                          The SAS System                          08:42 Thursday, November 23, 2023
 
 NOTE: Copyright (c) 2023 by SAS Institute Inc., Cary, NC, USA. 
 NOTE: SAS (r) Proprietary Software 9.4 (TS1M8) 
@@ -39,7 +39,7 @@ The command line option "-nonews" will prevent this display.
 
 NOTE: SAS initialization used:
       real time           0.02 seconds
-      cpu time            0.03 seconds
+      cpu time            0.02 seconds
       
 1          options symbolgen mprint mlogic;
 2          filename rwiOut ".";
@@ -58,7 +58,7 @@ NOTE: Writing HTML Body file: Discovery.html
    </div>
    <div dest="html4" class="graph">
    </div>
-2                                                          The SAS System                          08:31 Thursday, November 23, 2023
+2                                                          The SAS System                          08:42 Thursday, November 23, 2023
 
    <div dest="html4" class="byline">
    </div>
@@ -78,12 +78,30 @@ NOTE: Writing HTML Body file: Discovery.html
       <body class="shutdownfunction">
       </body>
       <div class="body">
-5          %include "/tmp/discovery_ms/ProgramaSAS/tab_infoServidor.sas";
+5          data _null_;
+6          call symput(dt_atual, today());
+7          run;
+
+NOTE: Numeric values have been converted to character values at the places given by: (Line):(Column).
+      6:13   6:23   
+ERROR: Symbolic variable name            . must begin with a letter or underscore.
+NOTE: Invalid argument to function SYMPUT('           .','       23337') at line 6 column 6.
+dt_atual=. _ERROR_=1 _N_=1
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+WARNING: Apparent symbolic reference DT_ATUAL not resolved.
+8          %put &dt_atual.;
+&dt_atual.
+9          %include "/tmp/discovery_ms/ProgramaSAS/tab_infoServidor.sas";
 
 NOTE: The data set WORK.INFOCPU has 5 observations and 2 variables.
 NOTE: DATA statement used (Total process time):
       real time           0.00 seconds
-      cpu time            0.01 seconds
+      cpu time            0.00 seconds
       
 
 
@@ -100,6 +118,8 @@ contents-label="data set work.infocpu" path="print.print">
                <tr>
                   <td class="systemtitle">Informacoes do Servidor - SASSERVER.DEMO.SAS.COM
                   </td>
+3                                                          The SAS System                          08:42 Thursday, November 23, 2023
+
                </tr>
             </table>
             <h1 class="systemtitle">
@@ -118,8 +138,6 @@ contents-label="data set work.infocpu" path="print.print">
             <div class="contentprocname" target="body" url="discovery.html#idx">
                <ul class="contentproclabel">
                </ul>
-3                                                          The SAS System                          08:31 Thursday, November 23, 2023
-
                <ul class="contentitem">
                </ul>
                <div class="contentitem" target="body" url="discovery.html#idx">
@@ -160,6 +178,8 @@ label="informacoes">sasserver.demo.sas.com
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
+4                                                          The SAS System                          08:42 Thursday, November 23, 2023
+
 label="descricao">Tipo de Servidor
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
@@ -178,8 +198,6 @@ label="informacoes">vmware
                         <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
 label="descricao">Sistema Operacional
                         </td>
-4                                                          The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
 label="informacoes">CentOS Linux release 7.9.2009 (Core)
                         </td>
@@ -203,7 +221,7 @@ NOTE: PROCEDURE PRINT used (Total process time):
       cpu time            0.01 seconds
       
 
-21         %include "/tmp/discovery_ms/ProgramaSAS/tab_infoCPU.sas";
+25         %include "/tmp/discovery_ms/ProgramaSAS/tab_infoCPU.sas";
 
 NOTE: The data set WORK.INFOCPU has 4 observations and 2 variables.
 NOTE: DATA statement used (Total process time):
@@ -220,6 +238,8 @@ contents-label="data set work.infocpu" path="print.print">
             </div>
             <h1 class="systemtitle">
             </h1>
+5                                                          The SAS System                          08:42 Thursday, November 23, 2023
+
             <table class="systitleandfootercontainer">
                <colgroup>
                   <col>
@@ -238,8 +258,6 @@ contents-label="data set work.infocpu" path="print.print">
                <tr>
                   <td class="systemtitle">Informacoes da CPU - SASSERVER.DEMO.SAS.COM
                   </td>
-5                                                          The SAS System                          08:31 Thursday, November 23, 2023
-
                </tr>
             </table>
             <ul class="contentprocname">
@@ -280,6 +298,8 @@ label="informacoes">informacoes
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
 label="descricao">Modelo da CPU
+6                                                          The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
 label="informacoes">Intel(R) Xeon(R) Gold 6148 CPU @ 2.40GHz
@@ -298,8 +318,6 @@ label="informacoes">1
 label="descricao">Total de VCores
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
-6                                                          The SAS System                          08:31 Thursday, November 23, 2023
-
 label="informacoes">4
                         </td>
                      </tr>
@@ -322,7 +340,7 @@ NOTE: PROCEDURE PRINT used (Total process time):
       cpu time            0.00 seconds
       
 
-36         %include "/tmp/discovery_ms/ProgramaSAS/tab_infoMEM.sas";
+40         %include "/tmp/discovery_ms/ProgramaSAS/tab_infoMEM.sas";
 
 NOTE: The data set WORK.INFOMEMORIA has 2 observations and 2 variables.
 NOTE: DATA statement used (Total process time):
@@ -340,6 +358,8 @@ contents-label="data set work.infomemoria" path="print.print">
             <h1 class="systemtitle">
             </h1>
             <table class="systitleandfootercontainer">
+7                                                          The SAS System                          08:42 Thursday, November 23, 2023
+
                <colgroup>
                   <col>
                </colgroup>
@@ -358,8 +378,6 @@ contents-label="data set work.infomemoria" path="print.print">
                   <td class="systemtitle">Informacoes da Memoria - SASSERVER.DEMO.SAS.COM
                   </td>
                </tr>
-7                                                          The SAS System                          08:31 Thursday, November 23, 2023
-
             </table>
             <ul class="contentprocname">
             </ul>
@@ -400,6 +418,8 @@ label="informacoes">informacoes
                         <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
 label="descricao">Total de Memoria RAM
                         </td>
+8                                                          The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
 label="informacoes">62G
                         </td>
@@ -418,14 +438,12 @@ label="informacoes">799M
          </div>
 NOTE: There were 2 observations read from the data set WORK.INFOMEMORIA.
 NOTE: The PROCEDURE PRINT printed page 3.
-8                                                          The SAS System                          08:31 Thursday, November 23, 2023
-
 NOTE: PROCEDURE PRINT used (Total process time):
       real time           0.00 seconds
       cpu time            0.00 seconds
       
 
-49         %include "/tmp/discovery_ms/ProgramaSAS/tab_infoRede.sas";
+53         %include "/tmp/discovery_ms/ProgramaSAS/tab_infoRede.sas";
 
 NOTE: The data set WORK.INFOREDE has 11 observations and 2 variables.
 NOTE: DATA statement used (Total process time):
@@ -460,6 +478,8 @@ contents-label="data set work.inforede" path="print.print">
                <tr>
                   <td class="systemtitle">Informacoes da Rede - SASSERVER.DEMO.SAS.COM
                   </td>
+9                                                          The SAS System                          08:42 Thursday, November 23, 2023
+
                </tr>
             </table>
             <ul class="contentprocname">
@@ -478,8 +498,6 @@ contents-label="data set work.inforede" path="print.print">
                <table class="table">
                   <colgroup>
                      <col type="char" name="descricao">
-9                                                          The SAS System                          08:31 Thursday, November 23, 2023
-
                      <col type="char" name="informacoes">
                      <div>
                      </div>
@@ -520,6 +538,8 @@ label="informacoes">search exnet.sas.com demo.sas.com
 label="descricao">DNS
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
+10                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 label="informacoes">nameserver 149.173.5.54
                         </td>
                      </tr>
@@ -538,8 +558,6 @@ label="descricao">Placa de Rede
                         <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
 label="informacoes">eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
                         </td>
-10                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
@@ -580,6 +598,8 @@ label="descricao">Placa de Rede
                         <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
 label="informacoes">inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
                         </td>
+11                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
@@ -597,12 +617,10 @@ NOTE: There were 11 observations read from the data set WORK.INFOREDE.
 NOTE: The PROCEDURE PRINT printed page 4.
 NOTE: PROCEDURE PRINT used (Total process time):
       real time           0.00 seconds
-      cpu time            0.01 seconds
-11                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
+      cpu time            0.00 seconds
       
 
-71         %include "/tmp/discovery_ms/ProgramaSAS/tab_infoDisco.sas";
+75         %include "/tmp/discovery_ms/ProgramaSAS/tab_infoDisco.sas";
 
 NOTE: The data set WORK.INFODISCO has 8 observations and 2 variables.
 NOTE: DATA statement used (Total process time):
@@ -640,6 +658,8 @@ contents-label="data set work.infodisco" path="print.print">
                </tr>
             </table>
             <ul class="contentprocname">
+12                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
             </ul>
             <div class="contentprocname" target="body" url="discovery.html#idx4">
                <ul class="contentproclabel">
@@ -658,8 +678,6 @@ contents-label="data set work.infodisco" path="print.print">
                      <col type="char" name="informacoes">
                      <div>
                      </div>
-12                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                      <div>
                      </div>
                      <div>
@@ -700,6 +718,8 @@ label="descricao">Disco
 label="informacoes">tmpfs          tmpfs      32G  336K   32G   1%% /dev/shm
                         </td>
                      </tr>
+13                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
 label="descricao">Disco
@@ -718,8 +738,6 @@ label="informacoes">tmpfs          tmpfs      32G     0   32G   0%% /sys/fs/cgro
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="descricao" data-name="descricao" 
-13                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 label="descricao">Disco
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="informacoes" data-name="informacoes" 
@@ -750,16 +768,18 @@ NOTE: There were 8 observations read from the data set WORK.INFODISCO.
 NOTE: The PROCEDURE PRINT printed page 5.
 NOTE: PROCEDURE PRINT used (Total process time):
       real time           0.00 seconds
-      cpu time            0.00 seconds
+      cpu time            0.01 seconds
       
 
-90         %include "/tmp/discovery_ms/ProgramaSAS/sasinstallreport.sas";
+94         %include "/tmp/discovery_ms/ProgramaSAS/sasinstallreport.sas";
 MLOGIC(SASINSTALLREPORTER):  Beginning execution.
 SYMBOLGEN:  Macro variable SYSSCP resolves to LIN X64
 MLOGIC(SASINSTALLREPORTER):  %IF condition %index(CMOSVM,%substr(&SYSSCP,1,2)*) is FALSE
 MLOGIC(SASINSTALLREPORTER):  %LET (variable name is SLSH)
 MLOGIC(SASINSTALLREPORTER):  %LET (variable name is XCMD)
 MPRINT(SASINSTALLREPORTER):   options formdlim='-' nosyntaxcheck nostimer;
+14                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 SYMBOLGEN:  Macro variable SYSSCP resolves to LIN X64
 MLOGIC(SASINSTALLREPORTER):  %IF condition &SYSSCP = WIN is FALSE
 MPRINT(SASINSTALLREPORTER):   ** get location of SAS installation: **;
@@ -778,8 +798,6 @@ SYMBOLGEN:  Some characters in the above value which were subject to macro quoti
 MLOGIC(SASINSTALLREPORTER):  %LET (variable name is SASHOME)
 SYMBOLGEN:  Macro variable SASHOME resolves to 4.9/noitadnuoFSAS/emoHSAS/edisnisas/tpo/
 SYMBOLGEN:  Macro variable UPONE resolves to 4
-14                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 MLOGIC(SASINSTALLREPORTER):  %LET (variable name is SASHOME)
 SYMBOLGEN:  Macro variable SASHOME resolves to noitadnuoFSAS/emoHSAS/edisnisas/tpo/
 SYMBOLGEN:  Macro variable SYSVLONG resolves to 9.04.01M8P011823
@@ -820,12 +838,14 @@ MLOGIC(SASINSTALLREPORTER):  %IF condition "&METAPASS. " ^= " " is FALSE
 MPRINT(SASINSTALLREPORTER):   ***********************************************************************;
 MPRINT(SASINSTALLREPORTER):   * This code determines what is licensed by parsing the output from *;
 MPRINT(SASINSTALLREPORTER):   * PROC SETINIT. It then also creates a $license format that can be *;
+15                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 MPRINT(SASINSTALLREPORTER):   * used in printing the custom product versions and other steps. *;
 MPRINT(SASINSTALLREPORTER):   ***********************************************************************;
 MPRINT(SASINSTALLREPORTER):   filename license temp;
 MLOGIC(SASINSTALLREPORTER):  %LET (variable name is LICENSE)
-SYMBOLGEN:  Macro variable LICENSE resolves to /tmp/SAS_work5DA900004252_sasserver.demo.sas.com/#LN00017
-MPRINT(SASINSTALLREPORTER):   proc setinit outfile="/tmp/SAS_work5DA900004252_sasserver.demo.sas.com/#LN00017";
+SYMBOLGEN:  Macro variable LICENSE resolves to /tmp/SAS_work868C00004AF9_sasserver.demo.sas.com/#LN00017
+MPRINT(SASINSTALLREPORTER):   proc setinit outfile="/tmp/SAS_work868C00004AF9_sasserver.demo.sas.com/#LN00017";
 MPRINT(SASINSTALLREPORTER):   run;
 
 Original site validation data
@@ -838,8 +858,6 @@ Grace Period:  45 days (ending 20APR2024).
 Warning Period: 45 days (ending 04JUN2024).
 System birthday:   28FEB2023.
 Operating System:   LIN X64 .
-15                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 Product expiration dates:
 ---Base SAS Software                                                                                    06MAR2024 (CPU A) 
 ---SAS/STAT                                                                                             06MAR2024 (CPU A) 
@@ -880,6 +898,8 @@ Product expiration dates:
 ---SAS/ACCESS Interface to INFORMIX                                                                     06MAR2024 (CPU A) 
 ---SAS/ACCESS Interface to R/3                                                                          06MAR2024 (CPU A) 
 ---SAS/ACCESS Interface to Teradata                                                                     06MAR2024 (CPU A) 
+16                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 ---SAS/ACCESS Interface to Microsoft SQL Server                                                         06MAR2024 (CPU A) 
 ---SAS/ACCESS Interface to MySQL                                                                        06MAR2024 (CPU A) 
 ---Text Miner for Danish                                                                                06MAR2024 (CPU A) 
@@ -898,8 +918,6 @@ Product expiration dates:
 ---Text Miner for Korean                                                                                06MAR2024 (CPU A) 
 ---SAS Forecast Studio                                                                                  06MAR2024 (CPU A) 
 ---SAS Forecast Server Mid-Tier                                                                         06MAR2024 (CPU A) 
-16                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 ---Text Miner for Croatian                                                                              06MAR2024 (CPU A) 
 ---Text Miner for Norwegian                                                                             06MAR2024 (CPU A) 
 ---Text Miner for Slovak                                                                                06MAR2024 (CPU A) 
@@ -940,6 +958,8 @@ Product expiration dates:
 ---SAS Web Crawler Server                                                                               06MAR2024 (CPU A) 
 ---Model Mgmt Shared Macros                                                                             06MAR2024 (CPU A) 
 ---SAS LASR Analytic Server                                                                             06MAR2024 (CPU A) 
+17                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 ---SAS Time Series Workspace Macros                                                                     06MAR2024 (CPU A) 
 ---SAS Visual Analytics Hub                                                                             06MAR2024 (CPU A) 
 ---SAS Visual Analytics Services                                                                        06MAR2024 (CPU A) 
@@ -958,8 +978,6 @@ Product expiration dates:
 ---SAS Visual Analytics Server Components                                                               06MAR2024 (CPU A) 
 ---SAS Visual Statistics Mid-tier                                                                       06MAR2024 (CPU A) 
 ---SAS/ACCESS Interface to the PI System                                                                06MAR2024 (CPU A) 
-17                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 ---Factory Miner Services API                                                                           06MAR2024 (CPU A) 
 ---Visual Analytics Explorer                                                                            06MAR2024 (CPU A) 
 ---SAS/ACCESS to Spark                                                                                  06MAR2024 (CPU A) 
@@ -975,8 +993,8 @@ MPRINT(SASINSTALLREPORTER):   label diedate = 'DIE DATE';
 MPRINT(SASINSTALLREPORTER):   label cmpont = 'COMPONENT ----------------------------------------';
 MPRINT(SASINSTALLREPORTER):   retain expires dies grace warn 0;
 MPRINT(SASINSTALLREPORTER):   keep prodnum diedate cmpont;
-SYMBOLGEN:  Macro variable LICENSE resolves to /tmp/SAS_work5DA900004252_sasserver.demo.sas.com/#LN00017
-MPRINT(SASINSTALLREPORTER):   infile "/tmp/SAS_work5DA900004252_sasserver.demo.sas.com/#LN00017" lrecl=100 pad;
+SYMBOLGEN:  Macro variable LICENSE resolves to /tmp/SAS_work868C00004AF9_sasserver.demo.sas.com/#LN00017
+MPRINT(SASINSTALLREPORTER):   infile "/tmp/SAS_work868C00004AF9_sasserver.demo.sas.com/#LN00017" lrecl=100 pad;
 MPRINT(SASINSTALLREPORTER):   input;
 MPRINT(SASINSTALLREPORTER):   if length(_infile_) < 2 then delete;
 MPRINT(SASINSTALLREPORTER):   if _infile_ =: "     EXPIRE" then expires = input(scan(_infile_,2," ='"),date9.);
@@ -998,14 +1016,16 @@ MPRINT(SASINSTALLREPORTER):   output;
 MPRINT(SASINSTALLREPORTER):   end;
 MPRINT(SASINSTALLREPORTER):   run;
 
-NOTE: The infile "/tmp/SAS_work5DA900004252_sasserver.demo.sas.com/#LN00017" is:
-      Filename=/tmp/SAS_work5DA900004252_sasserver.demo.sas.com/#LN00017,
+NOTE: The infile "/tmp/SAS_work868C00004AF9_sasserver.demo.sas.com/#LN00017" is:
+      Filename=/tmp/SAS_work868C00004AF9_sasserver.demo.sas.com/#LN00017,
+18                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
       Owner Name=sas,Group Name=sas,
       Access Permission=-rw-rw-r--,
-      Last Modified=23Nov2023:08:31:10,
+      Last Modified=23Nov2023:08:42:38,
       File Size (bytes)=8547
 
-NOTE: 138 records were read from the infile "/tmp/SAS_work5DA900004252_sasserver.demo.sas.com/#LN00017".
+NOTE: 138 records were read from the infile "/tmp/SAS_work868C00004AF9_sasserver.demo.sas.com/#LN00017".
       The minimum record length was 1.
       The maximum record length was 93.
 NOTE: The data set WORK.LICENSE has 121 observations and 3 variables.
@@ -1017,8 +1037,6 @@ MPRINT(SASINSTALLREPORTER):   length label $ 64 begin $ 10;
 MPRINT(SASINSTALLREPORTER):   retain fmtname "license" type "c";
 MPRINT(SASINSTALLREPORTER):   set license(rename=(prodnum=start cmpont=label));
 MPRINT(SASINSTALLREPORTER):   run;
-
-18                                                         The SAS System                          08:31 Thursday, November 23, 2023
 
 NOTE: Variable begin is uninitialized.
 NOTE: There were 121 observations read from the data set WORK.LICENSE.
@@ -1053,6 +1071,8 @@ MPRINT(SASINSTALLREPORTER):   length component $64 custver $10 imgver $16;
 MPRINT(SASINSTALLREPORTER):   retain component custver imgver ' ';
 MPRINT(SASINSTALLREPORTER):   *format component $license.;
 MPRINT(SASINSTALLREPORTER):   label component = 'COMPONENT ------------------------------------' custver = 'Custom version' imgver 
+21                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 = 'Build version';
 MPRINT(SASINSTALLREPORTER):   input;
 MPRINT(SASINSTALLREPORTER):   if _infile_ =: 'NOTE: SAS' then do;
@@ -1061,18 +1081,16 @@ MPRINT(SASINSTALLREPORTER):   end;
 MPRINT(SASINSTALLREPORTER):   if _infile_ =: 'For ' then do;
 MPRINT(SASINSTALLREPORTER):   if component ^= ' ' then output;
 NOTE: Line generated by the invoked macro "SASINSTALLREPORTER".
-1432       (_infile_,5,len-8);              component = put(component,$license.);              imgver = ' ';           end;
+1436       (_infile_,5,len-8);              component = put(component,$license.);              imgver = ' ';           end;
                                                                       _________
                                                                       48
-1432     ! if _infile_ =: '   Custom' then           custver = substr(_infile_,32);        if _infile_ =: '   Image' then
-1432     ! imgver =
+1436     ! if _infile_ =: '   Custom' then           custver = substr(_infile_,32);        if _infile_ =: '   Image' then
+1436     ! imgver =
 MPRINT(SASINSTALLREPORTER):   component = substr(_infile_,5,len-8);
 MPRINT(SASINSTALLREPORTER):   component = put(component,$license.);
 MPRINT(SASINSTALLREPORTER):   imgver = ' ';
 MPRINT(SASINSTALLREPORTER):   end;
 MPRINT(SASINSTALLREPORTER):   if _infile_ =: '   Custom' then custver = substr(_infile_,32);
-21                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 MPRINT(SASINSTALLREPORTER):   if _infile_ =: '   Image' then imgver = substr(_infile_,31);
 MPRINT(SASINSTALLREPORTER):   run;
 
@@ -1113,6 +1131,8 @@ Viewer' 'WEBRPTVR' = 'SAS Web Report Viewer' 'MITIBRIDGE' = 'SAS Metadata Bridge
 'EMAAUXDATAIO','EMACORE','EMALAUNCHER','EMASMC','EMAWEBNPORT' = 'SAS Digital Marketing' 'FORCASTSTDO' = 'Forecast Studio' 
 'FORCASTSRVR' = 'Forecast Server' 'DA' = 'Enterprise Miner Server' 'MMAPI' = 'Model Manager Mid Tier' 'MMGUI' = 'Model Manager 
 Client' 'TMCLIENT' = 'Text Miner Client' 'CR' = 'Credit Scoring' ;
+22                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 NOTE: Format $HFPROD has been output.
 MPRINT(SASINSTALLREPORTER):   run;
 
@@ -1131,8 +1151,6 @@ SYMBOLGEN:  Macro variable FILLLEN resolves to 90
 MLOGIC(DASH):  Parameter FILLLEN has value 90
 SYMBOLGEN:  Macro variable FILLLEN resolves to 90
 MLOGIC(DASH):  %DO loop beginning; index variable I; start value is 1; stop value is 90; by value is 1.  
-22                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 MLOGIC(DASH):  %DO loop index variable I is now 2; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 3; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 4; loop will iterate again.
@@ -1173,6 +1191,8 @@ MLOGIC(DASH):  %DO loop index variable I is now 38; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 39; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 40; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 41; loop will iterate again.
+23                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 MLOGIC(DASH):  %DO loop index variable I is now 42; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 43; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 44; loop will iterate again.
@@ -1191,8 +1211,6 @@ MLOGIC(DASH):  %DO loop index variable I is now 56; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 57; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 58; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 59; loop will iterate again.
-23                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 MLOGIC(DASH):  %DO loop index variable I is now 60; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 61; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 62; loop will iterate again.
@@ -1233,6 +1251,8 @@ MPRINT(SASINSTALLREPORTER):   "SAS 9.4 (9.04.01M8P01182023)
                  SITE: 70068118";
 MLOGIC(SASINSTALLREPORTER):  %LET (variable name is FILLLEN)
 SYMBOLGEN:  Macro variable LS resolves to 132
+24                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 SYMBOLGEN:  Macro variable MACHINE resolves to sasserver
 SYMBOLGEN:  Macro variable SYSSCP resolves to LIN X64
 SYMBOLGEN:  Macro variable SYSSCPL resolves to Linux
@@ -1251,8 +1271,6 @@ MLOGIC(DASH):  %DO loop index variable I is now 6; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 7; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 8; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 9; loop will iterate again.
-24                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 MLOGIC(DASH):  %DO loop index variable I is now 10; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 11; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 12; loop will iterate again.
@@ -1293,6 +1311,8 @@ MLOGIC(DASH):  %DO loop index variable I is now 46; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 47; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 48; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 49; loop will iterate again.
+25                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 MLOGIC(DASH):  %DO loop index variable I is now 50; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 51; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 52; loop will iterate again.
@@ -1311,8 +1331,6 @@ MLOGIC(DASH):  %DO loop index variable I is now 64; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 65; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 66; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 67; loop will iterate again.
-25                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 MLOGIC(DASH):  %DO loop index variable I is now 68; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 69; loop will iterate again.
 MLOGIC(DASH):  %DO loop index variable I is now 70; loop will iterate again.
@@ -1353,6 +1371,8 @@ SYMBOLGEN:  Macro variable SYSSCPL resolves to Linux
 MPRINT(SASINSTALLREPORTER):   "HOST: sasserver                                                                                      
             OS: LIN X64 (Linux)";
 MPRINT(SASINSTALLREPORTER):   Proc print data=license noobs uniform label;
+26                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 MPRINT(SASINSTALLREPORTER):   title6 "1: Products, components, or solutions that are licensed";
 SYMBOLGEN:  Macro variable GRACE resolves to 45
 SYMBOLGEN:  Macro variable WARN resolves to 45
@@ -1371,8 +1391,6 @@ contents-label="data set work.license" path="print.print">
             </h1>
             <h1 class="systemtitle3">
             </h1>
-26                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
             <h1 class="systemtitle4">
             </h1>
             <h1 class="systemtitle5">
@@ -1413,6 +1431,8 @@ contents-label="data set work.license" path="print.print">
                   <td class="systemtitle6">1: Products, components, or solutions that are licensed
                   </td>
                </tr>
+27                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                <tr>
                   <td class="systemtitle7"> 
                   </td>
@@ -1431,8 +1451,6 @@ contents-label="data set work.license" path="print.print">
             <h1 class="systemtitle4">
             </h1>
             <h1 class="systemtitle5">
-27                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
             </h1>
             <h1 class="systemtitle6">
             </h1>
@@ -1473,6 +1491,8 @@ contents-label="data set work.license" path="print.print">
                <tr>
                   <td class="systemtitle7"> 
                   </td>
+28                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                </tr>
                <tr>
                   <td class="systemtitle8">Note: 'DIE DATE' is product expiration date plus 45 GRACE days and 45 WARN days
@@ -1491,8 +1511,6 @@ contents-label="data set work.license" path="print.print">
                <div>
                </div>
                <div class="data">
-28                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                </div>
                <table class="table">
                   <colgroup>
@@ -1533,6 +1551,8 @@ label="die date">04JUN2024
 label="component ----------------------------------------">Base SAS Software
                         </td>
                      </tr>
+29                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
 label="prodnum">PRODNUM001
@@ -1551,8 +1571,6 @@ label="prodnum">PRODNUM002
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
 label="die date">04JUN2024
                         </td>
-29                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
 label="component ----------------------------------------">SAS/GRAPH
                         </td>
@@ -1593,6 +1611,8 @@ label="component ----------------------------------------">SAS/OR
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
 label="prodnum">PRODNUM006
+30                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
 label="die date">04JUN2024
@@ -1611,8 +1631,6 @@ label="die date">04JUN2024
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
 label="component ----------------------------------------">SAS/IML
                         </td>
-30                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
@@ -1653,6 +1671,8 @@ label="prodnum">PRODNUM025
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
 label="die date">04JUN2024
+31                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
 label="component ----------------------------------------">SAS/EIS
@@ -1671,8 +1691,6 @@ label="component ----------------------------------------">SAS/GIS
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
-31                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 label="prodnum">PRODNUM045
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
@@ -1713,6 +1731,8 @@ label="die date">04JUN2024
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
 label="component ----------------------------------------">SAS Integration Technologies
+32                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                      </tr>
                      <tr>
@@ -1731,8 +1751,6 @@ label="component ----------------------------------------">SAS/Secure 168-bit
 label="prodnum">PRODNUM102
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
-32                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 label="die date">04JUN2024
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
@@ -1773,6 +1791,8 @@ label="component ----------------------------------------">Unused OLAP Slot
                         </td>
                      </tr>
                      <tr>
+33                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
 label="prodnum">PRODNUM113
                         </td>
@@ -1791,8 +1811,6 @@ label="prodnum">PRODNUM116
 label="die date">04JUN2024
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
-33                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 label="component ----------------------------------------">SAS High-Performance Forecasting
                         </td>
                      </tr>
@@ -1833,6 +1851,8 @@ label="component ----------------------------------------">Forecast Server Condi
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
 label="prodnum">PRODNUM164
                         </td>
+34                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
 label="die date">04JUN2024
                         </td>
@@ -1851,8 +1871,6 @@ label="die date">04JUN2024
 label="component ----------------------------------------">OR PRS
                         </td>
                      </tr>
-34                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
 label="prodnum">PRODNUM166
@@ -1893,6 +1911,8 @@ label="prodnum">PRODNUM194
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
 label="die date">04JUN2024
                         </td>
+35                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
 label="component ----------------------------------------">SAS/ACCESS Interface to Oracle
                         </td>
@@ -1911,8 +1931,6 @@ label="component ----------------------------------------">SAS/ACCESS Interface 
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
 label="prodnum">PRODNUM208
-35                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
 label="die date">04JUN2024
@@ -1953,6 +1971,8 @@ label="die date">04JUN2024
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
 label="component ----------------------------------------">SAS/ACCESS Interface to R/3
                         </td>
+36                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
@@ -1971,8 +1991,6 @@ label="prodnum">PRODNUM222
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
 label="die date">04JUN2024
-36                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
 label="component ----------------------------------------">SAS/ACCESS Interface to Microsoft SQL Server
@@ -2013,6 +2031,8 @@ label="component ----------------------------------------">Text Miner for Dutch
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
+37                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 label="prodnum">PRODNUM305
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
@@ -2031,8 +2051,6 @@ label="die date">04JUN2024
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
 label="component ----------------------------------------">Text Miner for French
-37                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                      </tr>
                      <tr>
@@ -2073,6 +2091,8 @@ label="component ----------------------------------------">Text Miner for Portug
 label="prodnum">PRODNUM310
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
+38                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 label="die date">04JUN2024
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
@@ -2091,8 +2111,6 @@ label="component ----------------------------------------">Text Miner for Swedis
                         </td>
                      </tr>
                      <tr>
-38                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
 label="prodnum">PRODNUM312
                         </td>
@@ -2133,6 +2151,8 @@ label="prodnum">PRODNUM318
 label="die date">04JUN2024
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
+39                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 label="component ----------------------------------------">Text Miner for Russian
                         </td>
                      </tr>
@@ -2151,8 +2171,6 @@ label="component ----------------------------------------">Text Miner for Korean
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
 label="prodnum">PRODNUM441
                         </td>
-39                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
 label="die date">04JUN2024
                         </td>
@@ -2193,6 +2211,8 @@ label="die date">04JUN2024
 label="component ----------------------------------------">Text Miner for Norwegian
                         </td>
                      </tr>
+40                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
 label="prodnum">PRODNUM456
@@ -2211,8 +2231,6 @@ label="prodnum">PRODNUM457
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
 label="die date">04JUN2024
                         </td>
-40                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
 label="component ----------------------------------------">Text Miner for Slovenian
                         </td>
@@ -2253,6 +2271,8 @@ label="component ----------------------------------------">Text Miner for Hebrew
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
 label="prodnum">PRODNUM461
+41                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
 label="die date">04JUN2024
@@ -2271,8 +2291,6 @@ label="die date">04JUN2024
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
 label="component ----------------------------------------">Text Miner for Romanian
                         </td>
-41                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
@@ -2313,6 +2331,8 @@ label="prodnum">PRODNUM466
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
 label="die date">04JUN2024
+42                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
 label="component ----------------------------------------">Text Miner for Indonesian
@@ -2331,8 +2351,6 @@ label="component ----------------------------------------">Text Miner for Vietna
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
-42                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 label="prodnum">PRODNUM468
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
@@ -2373,6 +2391,8 @@ label="die date">04JUN2024
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
 label="component ----------------------------------------">SAS Model Manager
+43                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                      </tr>
                      <tr>
@@ -2391,8 +2411,6 @@ label="component ----------------------------------------">SAS/IML Studio
 label="prodnum">PRODNUM538
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
-43                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 label="die date">04JUN2024
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
@@ -2433,6 +2451,8 @@ label="component ----------------------------------------">SAS/ACCESS Interface 
                         </td>
                      </tr>
                      <tr>
+44                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
 label="prodnum">PRODNUM560
                         </td>
@@ -2451,8 +2471,6 @@ label="prodnum">PRODNUM561
 label="die date">04JUN2024
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
-44                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 label="component ----------------------------------------">SAS/ACCESS to Hadoop
                         </td>
                      </tr>
@@ -2493,6 +2511,8 @@ label="component ----------------------------------------">SAS/ACCESS to Impala
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
 label="prodnum">PRODNUM566
                         </td>
+45                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
 label="die date">04JUN2024
                         </td>
@@ -2511,8 +2531,6 @@ label="die date">04JUN2024
 label="component ----------------------------------------">SAS/ACCESS to Amazon Redshift
                         </td>
                      </tr>
-45                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
 label="prodnum">PRODNUM569
@@ -2553,6 +2571,8 @@ label="prodnum">PRODNUM679
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
 label="die date">04JUN2024
                         </td>
+46                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
 label="component ----------------------------------------">SAS Add-in for Microsoft Outlook
                         </td>
@@ -2571,8 +2591,6 @@ label="component ----------------------------------------">SAS Add-in for Micros
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
 label="prodnum">PRODNUM681
-46                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
 label="die date">04JUN2024
@@ -2613,6 +2631,8 @@ label="die date">04JUN2024
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
 label="component ----------------------------------------">Model Mgmt Shared Macros
                         </td>
+47                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
@@ -2631,8 +2651,6 @@ label="prodnum">PRODNUM818
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
 label="die date">04JUN2024
-47                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
 label="component ----------------------------------------">SAS Time Series Workspace Macros
@@ -2673,6 +2691,8 @@ label="component ----------------------------------------">SAS/ACCESS to SAP HAN
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
+48                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 label="prodnum">PRODNUM885
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
@@ -2691,8 +2711,6 @@ label="die date">04JUN2024
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
 label="component ----------------------------------------">SAS/ACCESS Interface to Yellowbrick
-48                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                      </tr>
                      <tr>
@@ -2733,6 +2751,8 @@ label="component ----------------------------------------">High Performance Fore
 label="prodnum">PRODNUM913
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
+49                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 label="die date">04JUN2024
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
@@ -2751,8 +2771,6 @@ label="component ----------------------------------------">High Performance STAT
                         </td>
                      </tr>
                      <tr>
-49                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
 label="prodnum">PRODNUM915
                         </td>
@@ -2793,6 +2811,8 @@ label="prodnum">PRODNUM920
 label="die date">04JUN2024
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
+50                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 label="component ----------------------------------------">High Performance Analytics Distributed Mode
                         </td>
                      </tr>
@@ -2811,8 +2831,6 @@ label="component ----------------------------------------">SAS Visual Analytics 
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
 label="prodnum">PRODNUM952
                         </td>
-50                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
 label="die date">04JUN2024
                         </td>
@@ -2853,6 +2871,8 @@ label="die date">04JUN2024
 label="component ----------------------------------------">Visual Analytics Explorer
                         </td>
                      </tr>
+51                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="prodnum" data-name="prodnum" 
 label="prodnum">PRODNUM130
@@ -2871,8 +2891,6 @@ label="prodnum">PRODNUM130
                         <td class="data" type="char" unformatted-type="char" index="2" name="diedate" data-name="diedate" 
 label="die date">04JUN2024
                         </td>
-51                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="3" name="cmpont" data-name="cmpont" 
 label="component ----------------------------------------">SAS/ACCESS to JDBC
                         </td>
@@ -2913,6 +2931,8 @@ MPRINT(SASINSTALLREPORTER):   length order $ 32;
 MPRINT(SASINSTALLREPORTER):   stop;
 MPRINT(SASINSTALLREPORTER):   run;
 
+52                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 NOTE: Variable order is uninitialized.
 NOTE: The data set WORK.ORDERS has 0 observations and 1 variables.
 
@@ -2931,8 +2951,6 @@ MPRINT(SASINSTALLREPORTER):   retain section;
 MPRINT(SASINSTALLREPORTER):   drop section;
 MPRINT(SASINSTALLREPORTER):   length keyname $ 16;
 MPRINT(SASINSTALLREPORTER):   retain keyname;
-52                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 MPRINT(SASINSTALLREPORTER):   drop keyname;
 MPRINT(SASINSTALLREPORTER):   length key 8;
 MPRINT(SASINSTALLREPORTER):   retain key 0;
@@ -2973,6 +2991,8 @@ MPRINT(SASINSTALLREPORTER):   else if index(_infile_,'name="timestamp"') then do
 MPRINT(SASINSTALLREPORTER):   link INNAME;
 MPRINT(SASINSTALLREPORTER):   applied=name;
 MPRINT(SASINSTALLREPORTER):   end;
+53                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 MPRINT(SASINSTALLREPORTER):   end;
 MPRINT(SASINSTALLREPORTER):   else if key=7 then do;
 MPRINT(SASINSTALLREPORTER):   if index(_infile_,'name="displayname"') then if index(_infile_,'data="Hotfix ') then do;
@@ -2991,8 +3011,6 @@ MPRINT(SASINSTALLREPORTER):   if index(_infile_,'name="sashome"') then do;
 MPRINT(SASINSTALLREPORTER):   link INNAME;
 MPRINT(SASINSTALLREPORTER):   call symput('sashome',trim(name));
 MPRINT(SASINSTALLREPORTER):   end;
-53                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 MPRINT(SASINSTALLREPORTER):   else if index(_infile_,'name="install_user"') then do;
 MPRINT(SASINSTALLREPORTER):   link INNAME;
 MPRINT(SASINSTALLREPORTER):   call symput('installer',trim(name));
@@ -3033,6 +3051,8 @@ MPRINT(SASINSTALLREPORTER):   run;
 
 NOTE: There were 139 observations read from the data set WORK.ORDERS.
 NOTE: 136 observations with duplicate key values were deleted.
+54                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 NOTE: The data set WORK.ORDERS has 3 observations and 1 variables.
 
 MPRINT(SASINSTALLREPORTER):   proc sort data=components;
@@ -3051,8 +3071,6 @@ NOTE: 54 observations with duplicate key values were deleted.
 NOTE: The data set WORK.COMPONENTS has 370 observations and 3 variables.
 
 MPRINT(SASINSTALLREPORTER):   proc sort data=hotfixes nodup;
-54                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 MPRINT(SASINSTALLREPORTER):   by hotfix;
 MPRINT(SASINSTALLREPORTER):   run;
 
@@ -3093,6 +3111,8 @@ MPRINT(SASINSTALLREPORTER):   * be under the home directory (~) of the installer
 MPRINT(SASINSTALLREPORTER):   * these will be appended to the above components data set, and if any *;
 MPRINT(SASINSTALLREPORTER):   * Java app hot fixes are found, an xhotfix data set will be created. *;
 MPRINT(SASINSTALLREPORTER):   ***********************************************************************;
+55                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 SYMBOLGEN:  Macro variable SYSSCP resolves to LIN X64
 MLOGIC(SASINSTALLREPORTER):  %IF condition &SYSSCP = WIN is FALSE
 MLOGIC(SASINSTALLREPORTER):  %LET (variable name is VPDDIR)
@@ -3111,8 +3131,6 @@ MPRINT(SASINSTALLREPORTER):   run;
 
 NOTE: There were 370 observations read from the data set WORK.COMPONENTS.
 NOTE: 2 observations with duplicate key values were deleted.
-55                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 NOTE: The data set WORK.COMPONENTS has 368 observations and 3 variables.
 
 MPRINT(SASINSTALLREPORTER):   Proc print data=components noobs uniform label;
@@ -3153,6 +3171,8 @@ contents-label="data set work.components" path="print.print">
                   <td class="systemtitle3">SAS 9.4 (9.04.01M8P01182023)                                                             
                              SITE: 70068118
                   </td>
+56                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                </tr>
                <tr>
                   <td class="systemtitle4">HOST: sasserver                                                                          
@@ -3171,8 +3191,6 @@ contents-label="data set work.components" path="print.print">
             <h1 class="systemtitle">
             </h1>
             <h1 class="systemtitle2">
-56                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
             </h1>
             <h1 class="systemtitle3">
             </h1>
@@ -3213,6 +3231,8 @@ contents-label="data set work.components" path="print.print">
                   </td>
                </tr>
             </table>
+57                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
             <ul class="contentprocname">
             </ul>
             <div class="contentprocname" target="body" url="discovery.html#idx6">
@@ -3231,8 +3251,6 @@ contents-label="data set work.components" path="print.print">
                      <col type="char" name="component">
                      <col type="char" name="custver">
                      <col type="char" name="compid">
-57                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                      <div>
                      </div>
                      <div>
@@ -3273,6 +3291,8 @@ label="component ----------------------------------------">Advanced Programming 
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">2.84
+58                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">lasrstat
@@ -3291,8 +3311,6 @@ label="compid">hadoopbasics
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
-58                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 label="component ----------------------------------------">Base SAS
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
@@ -3333,6 +3351,8 @@ label="custver">15.3
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">basestat
+59                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                      </tr>
                      <tr>
@@ -3351,8 +3371,6 @@ label="compid">tkbasestat
 label="component ----------------------------------------">Base SAS User Interface
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
-59                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 label="custver">9.4_M8
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
@@ -3393,6 +3411,8 @@ label="compid">verthelpdoc
                         </td>
                      </tr>
                      <tr>
+60                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">DATA Step to DS2 Translator
                         </td>
@@ -3411,8 +3431,6 @@ label="component ----------------------------------------">DataDirect ODBC Drive
 label="custver">9.45
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
-60                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 label="compid">dtdrodbcrsft
                         </td>
                      </tr>
@@ -3453,6 +3471,8 @@ label="compid">dtdrodbcylbk
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">DataFlux API for Hadoop
                         </td>
+61                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.48
                         </td>
@@ -3471,8 +3491,6 @@ label="custver">9.45
 label="compid">mapsgeo
                         </td>
                      </tr>
-61                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">GfK GeoMarketing WORLD Maps for SAS Visual Analytics
@@ -3513,6 +3531,8 @@ label="component ----------------------------------------">Mid-Tier Rest Bridge
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.44
                         </td>
+62                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">mtrb
                         </td>
@@ -3531,8 +3551,6 @@ label="compid">odstemplate
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">PROC HTTP
-62                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.44
@@ -3573,6 +3591,8 @@ label="custver">9.4M6A
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">afdoc
                         </td>
+63                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
@@ -3591,8 +3611,6 @@ label="component ----------------------------------------">SAS Accelerator Publi
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.45
-63                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">accelmvadb2
@@ -3633,6 +3651,8 @@ label="compid">accelmvanetz
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
+64                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 label="component ----------------------------------------">SAS Accelerator Publishing Agent for Oracle
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
@@ -3651,8 +3671,6 @@ label="custver">9.45
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">accelmvahana
-64                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                      </tr>
                      <tr>
@@ -3693,6 +3711,8 @@ label="compid">aacmndbsvrc
 label="component ----------------------------------------">SAS Advanced Analytics Statistics
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
+65                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 label="custver">15.3
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
@@ -3711,8 +3731,6 @@ label="compid">bidashmid
                         </td>
                      </tr>
                      <tr>
-65                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS BI Dashboard Configuration Data
                         </td>
@@ -3753,6 +3771,8 @@ label="component ----------------------------------------">SAS BI Lineage Schedu
 label="custver">4.4_M8
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
+66                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 label="compid">bilschedule
                         </td>
                      </tr>
@@ -3771,8 +3791,6 @@ label="compid">biportlets
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS BI Report Services
                         </td>
-66                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">4.4_M8
                         </td>
@@ -3813,6 +3831,8 @@ label="custver">9.73
 label="compid">tkcas3rdclnt
                         </td>
                      </tr>
+67                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Common Analytic Procedures
@@ -3831,8 +3851,6 @@ label="component ----------------------------------------">SAS Compiler and Symb
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.59
                         </td>
-67                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">cmp
                         </td>
@@ -3873,6 +3891,8 @@ label="compid">databuildata
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Data Integration Studio Server JARs
+68                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">4.8_M7
@@ -3891,8 +3911,6 @@ label="custver">9.4_M8
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">dmscore
                         </td>
-68                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
@@ -3933,6 +3951,8 @@ label="component ----------------------------------------">SAS Deployment Backup
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.46
+69                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">svrbakupevm
@@ -3951,8 +3971,6 @@ label="compid">groovy
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
-69                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 label="component ----------------------------------------">SAS Deployment Tester - Client
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
@@ -3993,6 +4011,8 @@ label="custver">15.3
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">txtandocconv
+70                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                      </tr>
                      <tr>
@@ -4011,8 +4031,6 @@ label="compid">jdbcdrivers
 label="component ----------------------------------------">SAS Econometrics Procedures
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
-70                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 label="custver">8.5
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
@@ -4053,6 +4071,8 @@ label="compid">dmine
                         </td>
                      </tr>
                      <tr>
+71                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Enterprise Miner Help and Documentation
                         </td>
@@ -4071,8 +4091,6 @@ label="component ----------------------------------------">SAS Enterprise Miner 
 label="custver">15.3
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
-71                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 label="compid">dminejars
                         </td>
                      </tr>
@@ -4113,6 +4131,8 @@ label="compid">dminesmc
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Environment Manager
                         </td>
+72                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">2.5_M5
                         </td>
@@ -4131,8 +4151,6 @@ label="custver">2.5_M5
 label="compid">hyperagnt
                         </td>
                      </tr>
-72                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Environment Manager Enablement Kit Plug-in
@@ -4173,6 +4191,8 @@ label="component ----------------------------------------">SAS Environment Manag
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">2.6_M2
                         </td>
+73                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">admappmid
                         </td>
@@ -4191,8 +4211,6 @@ label="compid">evmgrpinfnd
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Esri Map Manager Plug-in for SAS Management Console
-73                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.4_M8
@@ -4233,6 +4251,8 @@ label="custver">15.3
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">fcmrlogtype
                         </td>
+74                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
@@ -4251,8 +4271,6 @@ label="component ----------------------------------------">SAS Factory Miner Ser
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">15.3
-74                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">fcmrsvrc
@@ -4293,6 +4311,8 @@ label="compid">forecastbatj
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
+75                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 label="component ----------------------------------------">SAS Forecast Reconciliation Procedures
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
@@ -4311,8 +4331,6 @@ label="custver">15.3
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">forecastsrvr
-75                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                      </tr>
                      <tr>
@@ -4353,6 +4371,8 @@ label="compid">forecastmva
 label="component ----------------------------------------">SAS Forecasting Procedures
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
+76                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 label="custver">8.5
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
@@ -4371,8 +4391,6 @@ label="compid">acceldb2fmt
                         </td>
                      </tr>
                      <tr>
-76                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Formats Library for Greenplum
                         </td>
@@ -4413,6 +4431,8 @@ label="component ----------------------------------------">SAS Foundation Servic
 label="custver">9.4_M8
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
+77                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 label="compid">jps
                         </td>
                      </tr>
@@ -4431,8 +4451,6 @@ label="compid">flexthemes
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Hadoop Configuration Libraries
                         </td>
-77                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">2.9
                         </td>
@@ -4473,6 +4491,8 @@ label="custver">15.3
 label="compid">hpdminempp
                         </td>
                      </tr>
+78                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS High-Performance Data Mining Server Components
@@ -4491,8 +4511,6 @@ label="component ----------------------------------------">SAS High-Performance 
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">15.3
                         </td>
-78                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">hpetsmpp
                         </td>
@@ -4533,6 +4551,8 @@ label="compid">hphpf
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS High-Performance Optimization
+79                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">15.3
@@ -4551,8 +4571,6 @@ label="custver">2.2_M9
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">hps
                         </td>
-79                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
@@ -4593,6 +4611,8 @@ label="component ----------------------------------------">SAS High-Performance 
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">15.3
+80                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">hptminempp
@@ -4611,8 +4631,6 @@ label="compid">hptmine
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
-80                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 label="component ----------------------------------------">SAS Home
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
@@ -4653,6 +4671,8 @@ label="custver">1.57
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">txainfretsrv
+81                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                      </tr>
                      <tr>
@@ -4671,8 +4691,6 @@ label="compid">inttech
 label="component ----------------------------------------">SAS Integration Technologies Documentation
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
-81                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 label="custver">9.4_M8
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
@@ -4713,6 +4731,8 @@ label="compid">scoreaccel
                         </td>
                      </tr>
                      <tr>
+82                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Java Component for Accessing Threaded Kernel from Java
                         </td>
@@ -4731,8 +4751,6 @@ label="component ----------------------------------------">SAS LASR Analytic Ser
 label="custver">2.84
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
-82                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 label="compid">lasr
                         </td>
                      </tr>
@@ -4773,6 +4791,8 @@ label="compid">mgmtconsole
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Metadata Bridge Content Types
                         </td>
+83                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">4.42
                         </td>
@@ -4791,8 +4811,6 @@ label="custver">2.5_M4
 label="compid">tkmas
                         </td>
                      </tr>
-83                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Model Management Shared Macros
@@ -4833,6 +4851,8 @@ label="component ----------------------------------------">SAS Model Manager Mid
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">14.3_M2
                         </td>
+84                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">mmapi
                         </td>
@@ -4851,8 +4871,6 @@ label="compid">graphcomp
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS ODBC Driver for Snowflake
-84                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.49516_M6
@@ -4893,6 +4911,8 @@ label="custver">9.47
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">grsgeditor
                         </td>
+85                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
@@ -4911,8 +4931,6 @@ label="component ----------------------------------------">SAS Operational Quali
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.4
-85                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">opqualtool
@@ -4953,6 +4971,8 @@ label="compid">privatejre
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
+86                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 label="component ----------------------------------------">SAS Remote Deployment Agent Client
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
@@ -4971,8 +4991,6 @@ label="custver">5.5
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">spdsclient
-86                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                      </tr>
                      <tr>
@@ -5013,6 +5031,8 @@ label="compid">studio
 label="component ----------------------------------------">SAS Studio Mid-Tier
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
+87                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 label="custver">3.82
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
@@ -5031,8 +5051,6 @@ label="compid">tkcloud
                         </td>
                      </tr>
                      <tr>
-87                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS TK Launcher
                         </td>
@@ -5073,6 +5091,8 @@ label="component ----------------------------------------">SAS Text Analytics fo
 label="custver">15.3
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
+88                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 label="compid">txtminara
                         </td>
                      </tr>
@@ -5091,8 +5111,6 @@ label="compid">txtminzho
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Text Analytics for Croatian
                         </td>
-88                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">15.3
                         </td>
@@ -5133,6 +5151,8 @@ label="custver">15.3
 label="compid">txtmindut
                         </td>
                      </tr>
+89                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Text Analytics for Farsi
@@ -5151,8 +5171,6 @@ label="component ----------------------------------------">SAS Text Analytics fo
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">15.3
                         </td>
-89                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">txtminfin
                         </td>
@@ -5193,6 +5211,8 @@ label="compid">txtmingrk
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Text Analytics for Hebrew
+90                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">15.3
@@ -5211,8 +5231,6 @@ label="custver">15.3
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">txtminhin
                         </td>
-90                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
@@ -5253,6 +5271,8 @@ label="component ----------------------------------------">SAS Text Analytics fo
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">15.3
+91                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">txtminjap
@@ -5271,8 +5291,6 @@ label="compid">txtminkor
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
-91                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 label="component ----------------------------------------">SAS Text Analytics for Norwegian
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
@@ -5313,6 +5331,8 @@ label="custver">15.3
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">txtminrom
+92                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                      </tr>
                      <tr>
@@ -5331,8 +5351,6 @@ label="compid">txtminrus
 label="component ----------------------------------------">SAS Text Analytics for Slovak
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
-92                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 label="custver">15.3
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
@@ -5373,6 +5391,8 @@ label="compid">txtminswe
                         </td>
                      </tr>
                      <tr>
+93                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Text Analytics for Thai
                         </td>
@@ -5391,8 +5411,6 @@ label="component ----------------------------------------">SAS Text Analytics fo
 label="custver">15.3
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
-93                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
 label="compid">txtmintur
                         </td>
                      </tr>
@@ -5433,6 +5451,8 @@ label="compid">tminemid
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Text Mining Process
                         </td>
+94                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">15.3
                         </td>
@@ -5451,8 +5471,6 @@ label="custver">9.60
 label="compid">tkcmp
                         </td>
                      </tr>
-94                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Threaded Kernel
@@ -5493,6 +5511,8 @@ label="component ----------------------------------------">SAS Threaded Kernel C
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.4_M8
                         </td>
+95                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">tkcore
                         </td>
@@ -5511,8 +5531,6 @@ label="compid">tktslang
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Threaded Kernel Driver for SAS Scalable Performance Data Ser
-95                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">5.5
@@ -5553,6 +5571,8 @@ label="custver">9.44
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">tkaster
                         </td>
+96                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
@@ -5571,8 +5591,6 @@ label="component ----------------------------------------">SAS Threaded Kernel E
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.45
-96                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">tkgreenplum
@@ -5613,6 +5631,8 @@ label="compid">tkdb2
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
+97                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 label="component ----------------------------------------">SAS Threaded Kernel Extension for Impala
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
@@ -5631,8 +5651,6 @@ label="custver">2.1_M7
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">tkmds
-97                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                      </tr>
                      <tr>
@@ -5673,6 +5691,8 @@ label="compid">tkmongodb
 label="component ----------------------------------------">SAS Threaded Kernel Extension for MySQL
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
+98                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 label="custver">9.41_M2
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
@@ -5691,8 +5711,6 @@ label="compid">tknetezza
                         </td>
                      </tr>
                      <tr>
-98                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Threaded Kernel Extension for ODBC
                         </td>
@@ -5733,6 +5751,8 @@ label="component ----------------------------------------">SAS Threaded Kernel E
 label="custver">9.41_M6
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
+99                                                         The SAS System                          08:42 Thursday, November 23, 2023
+
 label="compid">tkaccess
                         </td>
                      </tr>
@@ -5751,8 +5771,6 @@ label="compid">tksaphana
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Threaded Kernel Extension for SAP IQ
                         </td>
-99                                                         The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.4_M8
                         </td>
@@ -5793,6 +5811,8 @@ label="custver">9.43
 label="compid">tksforce
                         </td>
                      </tr>
+100                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Threaded Kernel Extension for Snowflake
@@ -5811,8 +5831,6 @@ label="component ----------------------------------------">SAS Threaded Kernel E
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.48
                         </td>
-100                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">tkteradata
                         </td>
@@ -5853,6 +5871,8 @@ label="compid">tkdmine
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Threaded Kernel Extensions for Econometric Time Series
+101                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">15.3
@@ -5871,8 +5891,6 @@ label="custver">9.4_M8
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">tktscore
                         </td>
-101                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
@@ -5913,6 +5931,8 @@ label="component ----------------------------------------">SAS Threaded Kernel E
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">15.3
+102                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">tkhpets
@@ -5931,8 +5951,6 @@ label="compid">tkhphpf
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
-102                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 label="component ----------------------------------------">SAS Threaded Kernel Extensions for High-Performance Statistics
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
@@ -5973,6 +5991,8 @@ label="custver">2.84
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">tklasr
+103                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                      </tr>
                      <tr>
@@ -5991,8 +6011,6 @@ label="compid">tklasreng
 label="component ----------------------------------------">SAS Threaded Kernel Extensions for Operations Research
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
-103                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 label="custver">15.3
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
@@ -6033,6 +6051,8 @@ label="compid">tkgrid
                         </td>
                      </tr>
                      <tr>
+104                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Threaded Kernel In-Database Supervisor
                         </td>
@@ -6051,8 +6071,6 @@ label="component ----------------------------------------">SAS Threaded Kernel I
 label="custver">9.4_M8
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
-104                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 label="compid">tkintr
                         </td>
                      </tr>
@@ -6093,6 +6111,8 @@ label="compid">tkoldoc
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Threaded Kernel Secure
                         </td>
+105                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.4_M8
                         </td>
@@ -6111,8 +6131,6 @@ label="custver">9.4_M8
 label="compid">tkformats
                         </td>
                      </tr>
-105                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Threaded Kernel User Functions
@@ -6153,6 +6171,8 @@ label="component ----------------------------------------">SAS Time Series Batch
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">15.3
                         </td>
+106                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">tsxbatj
                         </td>
@@ -6171,8 +6191,6 @@ label="compid">tstimeinfo
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Time Series Modeling Procedures
-106                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">8.5
@@ -6213,6 +6231,8 @@ label="custver">7.52
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">biprepmid
                         </td>
+107                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
@@ -6231,8 +6251,6 @@ label="component ----------------------------------------">SAS Visual Analytics 
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">7.52
-107                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">bidesignmid
@@ -6273,6 +6291,8 @@ label="compid">sagelogtypes
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
+108                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
 label="component ----------------------------------------">SAS Visual Analytics Extensions for Services
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
@@ -6291,8 +6311,6 @@ label="custver">7.52
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">bivagbmid
-108                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                      </tr>
                      <tr>
@@ -6333,6 +6351,8 @@ label="compid">bihpgrdc
 label="component ----------------------------------------">SAS Visual Analytics Logical Types
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
+109                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
 label="custver">7.52
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
@@ -6351,8 +6371,6 @@ label="compid">biprntbridge
                         </td>
                      </tr>
                      <tr>
-109                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Visual Analytics Printing Support
                         </td>
@@ -6393,6 +6411,8 @@ label="component ----------------------------------------">SAS Visual Analytics 
 label="custver">7.52
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
+110                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
 label="compid">bisrvmid
                         </td>
                      </tr>
@@ -6411,8 +6431,6 @@ label="compid">bidbldmid
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Visual Data Builder Configuration Data
                         </td>
-110                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">7.52
                         </td>
@@ -6453,6 +6471,8 @@ label="custver">15.3
 label="compid">mlearning
                         </td>
                      </tr>
+111                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Viya Content MVA Help and Documentation
@@ -6471,8 +6491,6 @@ label="component ----------------------------------------">SAS Viya Content Vert
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.4M8
                         </td>
-111                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">vertviyadoc
                         </td>
@@ -6513,6 +6531,8 @@ label="compid">webinfdjdbc
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Web Infrastructure Platform
+112                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.4_M8
@@ -6531,8 +6551,6 @@ label="custver">9.4_M7
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">webinfdsvr
                         </td>
-112                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
@@ -6573,6 +6591,8 @@ label="component ----------------------------------------">SAS Web Infrastructur
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.4_M8
+113                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">wipschedsvcs
@@ -6591,8 +6611,6 @@ label="compid">citationweb
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
-113                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 label="component ----------------------------------------">SAS Web Report Studio Help and Documentation
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
@@ -6633,6 +6651,8 @@ label="custver">9.45
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">aster
+114                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                      </tr>
                      <tr>
@@ -6651,8 +6671,6 @@ label="compid">db2
 label="component ----------------------------------------">SAS/ACCESS Interface to Google BigQuery
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
-114                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 label="custver">9.43
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
@@ -6693,6 +6711,8 @@ label="compid">hadoop
                         </td>
                      </tr>
                      <tr>
+115                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS/ACCESS Interface to Impala
                         </td>
@@ -6711,8 +6731,6 @@ label="component ----------------------------------------">SAS/ACCESS Interface 
 label="custver">9.46
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
-115                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 label="compid">informix
                         </td>
                      </tr>
@@ -6753,6 +6771,8 @@ label="compid">mongodb
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS/ACCESS Interface to MySQL
                         </td>
+116                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.41_M2
                         </td>
@@ -6771,8 +6791,6 @@ label="custver">9.45
 label="compid">netezza
                         </td>
                      </tr>
-116                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS/ACCESS Interface to ODBC
@@ -6813,6 +6831,8 @@ label="component ----------------------------------------">SAS/ACCESS Interface 
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.4_M8
                         </td>
+117                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">pcfile
                         </td>
@@ -6831,8 +6851,6 @@ label="compid">pcfiledoc
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS/ACCESS Interface to PostgreSQL
-117                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.4_M8
@@ -6873,6 +6891,8 @@ label="custver">9.4_M7
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">sybase
                         </td>
+118                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
@@ -6891,8 +6911,6 @@ label="component ----------------------------------------">SAS/ACCESS Interface 
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.4_M7
-118                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">sybaseiq
@@ -6933,6 +6951,8 @@ label="compid">teradata
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
+119                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
 label="component ----------------------------------------">SAS/ACCESS Interface to Vertica
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
@@ -6951,8 +6971,6 @@ label="custver">9.46
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">osisoft
-119                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                      </tr>
                      <tr>
@@ -6993,6 +7011,8 @@ label="compid">assist
 label="component ----------------------------------------">SAS/CONNECT
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
+120                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
 label="custver">9.4_M8
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
@@ -7011,8 +7031,6 @@ label="compid">connectdrvrs
                         </td>
                      </tr>
                      <tr>
-120                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS/CONNECT Help and Documentation
                         </td>
@@ -7053,6 +7071,8 @@ label="component ----------------------------------------">SAS/ETS Time Series &
 label="custver">15.3
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
+121                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
 label="compid">etscomp
                         </td>
                      </tr>
@@ -7071,8 +7091,6 @@ label="compid">fsp
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS/GIS
                         </td>
-121                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.4_M8
                         </td>
@@ -7113,6 +7131,8 @@ label="custver">9.4M8
 label="compid">graphdoc
                         </td>
                      </tr>
+122                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS/GRAPH JAR Files
@@ -7131,8 +7151,6 @@ label="component ----------------------------------------">SAS/GRAPH Java Applet
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.46
                         </td>
-122                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">graphapplet
                         </td>
@@ -7173,6 +7191,8 @@ label="compid">or
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">SAS/QC
+123                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">15.3
@@ -7191,8 +7211,6 @@ label="custver">15.2
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">qcjars
                         </td>
-123                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
@@ -7233,6 +7251,8 @@ label="component ----------------------------------------">SAS/SECURE Java Compo
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.4
+124                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">securejavam4
@@ -7251,8 +7271,6 @@ label="compid">securejavam5
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
-124                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 label="component ----------------------------------------">SAS/SECURE Java Component M6
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
@@ -7293,6 +7311,8 @@ label="custver">9.41_M4
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
 label="compid">securessl
+125                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                      </tr>
                      <tr>
@@ -7311,8 +7331,6 @@ label="compid">searchsas
 label="component ----------------------------------------">Standalone Formats
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
-125                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 label="custver">9.4_M8
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
@@ -7353,6 +7371,8 @@ label="compid">tkqc
                         </td>
                      </tr>
                      <tr>
+126                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">Threaded Kernel Grid JAR Files
                         </td>
@@ -7371,8 +7391,6 @@ label="component ----------------------------------------">Threaded Kernel IOM
 label="custver">9.4_M8
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="compid" data-name="compid" 
-126                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 label="compid">tkiom
                         </td>
                      </tr>
@@ -7413,6 +7431,8 @@ label="compid">tkl4sas
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">Threaded Kernel Metadata Component
                         </td>
+127                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="2" name="custver" data-name="custver" 
 label="custver">9.4_M8
                         </td>
@@ -7431,8 +7451,6 @@ label="custver">9.4_M8
 label="compid">tknls
                         </td>
                      </tr>
-127                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="component" data-name="component" 
 label="component ----------------------------------------">Threaded Kernel OLAP Server Component
@@ -7473,6 +7491,8 @@ MPRINT(SASINSTALLREPORTER):   run;
          <div>
          </div>
          <section id="idx7" class="oo" data-name="procprinttable" label="data set work.hotfixes" proc="print" output="print" 
+128                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
 contents-label="data set work.hotfixes" path="print.print">
             <div class="body">
             </div>
@@ -7491,8 +7511,6 @@ contents-label="data set work.hotfixes" path="print.print">
             <table class="systitleandfootercontainer">
                <colgroup>
                   <col>
-128                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                </colgroup>
                <tr>
                   <td class="systemtitle">SAS Install Reporter Version 4.0
@@ -7533,6 +7551,8 @@ contents-label="data set work.hotfixes" path="print.print">
             </h1>
             <h1 class="systemtitle6">
             </h1>
+129                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
             <table class="systitleandfootercontainer">
                <colgroup>
                   <col>
@@ -7551,8 +7571,6 @@ contents-label="data set work.hotfixes" path="print.print">
                   </td>
                </tr>
                <tr>
-129                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                   <td class="systemtitle4">HOST: sasserver                                                                          
                         OS: LIN X64 (Linux)
                   </td>
@@ -7593,6 +7611,8 @@ contents-label="data set work.hotfixes" path="print.print">
                      <div>
                      </div>
                   </colgroup>
+130                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                   <thead>
                      <tr>
                         <th class="header" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" 
@@ -7611,8 +7631,6 @@ label="component ----------------------------------------">COMPONENT -----------
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
 fix -------">F8V001
                         </td>
-130                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
 label="applied -------------------">
                         </td>
@@ -7653,6 +7671,8 @@ label="applied -------------------">
 label="component ----------------------------------------">SAS Threaded Kernel
                         </td>
                      </tr>
+131                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
 fix -------">I5V007
@@ -7671,8 +7691,6 @@ fix -------">I5V009
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
 label="applied -------------------">
                         </td>
-131                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Threaded Kernel
                         </td>
@@ -7713,6 +7731,8 @@ label="component ----------------------------------------">SAS Decision Manager 
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
 fix -------">I7T002
+132                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
 label="applied -------------------">
@@ -7731,8 +7751,6 @@ label="applied -------------------">
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Threaded Kernel User Functions
                         </td>
-132                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
@@ -7773,6 +7791,8 @@ fix -------">I8E001
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
 label="applied -------------------">
+133                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Threaded Kernel Core Routines
@@ -7791,8 +7811,6 @@ label="component ----------------------------------------">SAS Threaded Kernel C
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
-133                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 fix -------">I8E007
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
@@ -7833,6 +7851,8 @@ label="applied -------------------">
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Threaded Kernel Secure
+134                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                      </tr>
                      <tr>
@@ -7851,8 +7871,6 @@ label="component ----------------------------------------">SAS Visual Analytics 
 fix -------">I9A006
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
-134                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 label="applied -------------------">
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
@@ -7893,6 +7911,8 @@ label="component ----------------------------------------">SAS Management Consol
                         </td>
                      </tr>
                      <tr>
+135                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
 fix -------">I9F009
                         </td>
@@ -7911,8 +7931,6 @@ fix -------">I9G006
 label="applied -------------------">
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
-135                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 label="component ----------------------------------------">SAS Visual Analytics Report Viewer
                         </td>
                      </tr>
@@ -7953,6 +7971,8 @@ label="component ----------------------------------------">SAS Threaded Kernel D
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
 fix -------">I9H008
                         </td>
+136                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
 label="applied -------------------">
                         </td>
@@ -7971,8 +7991,6 @@ label="applied -------------------">
 label="component ----------------------------------------">SAS Threaded Kernel DS2 and FedSQL Language Processors
                         </td>
                      </tr>
-136                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
 fix -------">I9Q006
@@ -8013,6 +8031,8 @@ fix -------">I9R005
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
 label="applied -------------------">
                         </td>
+137                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
 label="component ----------------------------------------">Base SAS
                         </td>
@@ -8031,8 +8051,6 @@ label="component ----------------------------------------">Base SAS
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
 fix -------">I9R013
-137                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
 label="applied -------------------">
@@ -8073,6 +8091,8 @@ label="applied -------------------">
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
 label="component ----------------------------------------">Base SAS
                         </td>
+138                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
@@ -8091,8 +8111,6 @@ fix -------">I9R034
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
 label="applied -------------------">
-138                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
 label="component ----------------------------------------">Base SAS
@@ -8133,6 +8151,8 @@ label="component ----------------------------------------">Base SAS
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
+139                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
 fix -------">I9R051
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
@@ -8151,8 +8171,6 @@ label="applied -------------------">
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
 label="component ----------------------------------------">Base SAS
-139                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                      </tr>
                      <tr>
@@ -8193,6 +8211,8 @@ label="component ----------------------------------------">Base SAS
 fix -------">I9R059
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
+140                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
 label="applied -------------------">
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
@@ -8211,8 +8231,6 @@ label="component ----------------------------------------">Base SAS
                         </td>
                      </tr>
                      <tr>
-140                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
 fix -------">I9R062
                         </td>
@@ -8253,6 +8271,8 @@ fix -------">I9R069
 label="applied -------------------">
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
+141                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
 label="component ----------------------------------------">Base SAS
                         </td>
                      </tr>
@@ -8271,8 +8291,6 @@ label="component ----------------------------------------">Base SAS
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
 fix -------">I9R071
                         </td>
-141                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
 label="applied -------------------">
                         </td>
@@ -8313,6 +8331,8 @@ label="applied -------------------">
 label="component ----------------------------------------">SAS Web Report Studio
                         </td>
                      </tr>
+142                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
 fix -------">J1C003
@@ -8331,8 +8351,6 @@ fix -------">J1D001
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
 label="applied -------------------">
                         </td>
-142                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Visual Analytics Graph Builder Logical Types
                         </td>
@@ -8373,6 +8391,8 @@ label="component ----------------------------------------">SAS Configuration Man
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
 fix -------">J2J008
+143                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
 label="applied -------------------">
@@ -8391,8 +8411,6 @@ label="applied -------------------">
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Foundation Services
                         </td>
-143                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
@@ -8433,6 +8451,8 @@ fix -------">J4Q007
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
 label="applied -------------------">
+144                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Visual Analytics Explorer
@@ -8451,8 +8471,6 @@ label="component ----------------------------------------">SAS Visual Analytics 
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
-144                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 fix -------">J4W006
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
@@ -8493,6 +8511,8 @@ label="applied -------------------">
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
 label="component ----------------------------------------">Threaded Kernel Metadata Component
+145                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                      </tr>
                      <tr>
@@ -8511,8 +8531,6 @@ label="component ----------------------------------------">SAS Visual Analytics 
 fix -------">J6E001
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
-145                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 label="applied -------------------">
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
@@ -8553,6 +8571,8 @@ label="component ----------------------------------------">SAS Studio Basic
                         </td>
                      </tr>
                      <tr>
+146                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
 fix -------">J7I005
                         </td>
@@ -8571,8 +8591,6 @@ fix -------">J7Q003
 label="applied -------------------">
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
-146                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 label="component ----------------------------------------">SAS Data Integration Studio Server Data
                         </td>
                      </tr>
@@ -8613,6 +8631,8 @@ label="component ----------------------------------------">SAS/ACCESS Interface 
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
 fix -------">J9L001
                         </td>
+147                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
 label="applied -------------------">
                         </td>
@@ -8631,8 +8651,6 @@ label="applied -------------------">
 label="component ----------------------------------------">SAS/ACCESS Interface to PC Files
                         </td>
                      </tr>
-147                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
 fix -------">J9S001
@@ -8673,6 +8691,8 @@ fix -------">J9V006
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
 label="applied -------------------">
                         </td>
+148                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Environment Manager
                         </td>
@@ -8691,8 +8711,6 @@ label="component ----------------------------------------">SAS Threaded Kernel E
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
 fix -------">K1G005
-148                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
 label="applied -------------------">
@@ -8733,6 +8751,8 @@ label="applied -------------------">
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Model Manager Common Components
                         </td>
+149                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
@@ -8751,8 +8771,6 @@ fix -------">K3T001
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
 label="applied -------------------">
-149                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
 label="component ----------------------------------------">SAS Model Manager Common JAR Files
@@ -8793,6 +8811,8 @@ label="component ----------------------------------------">Threaded Kernel Natio
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
+150                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
 fix -------">K6S001
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
@@ -8811,8 +8831,6 @@ label="applied -------------------">
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
 label="component ----------------------------------------">SAS/GRAPH Java Applets for Web Servers
-150                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                      </tr>
                      <tr>
@@ -8853,6 +8871,8 @@ label="component ----------------------------------------">SAS/SECURE
 fix -------">L2F001
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="2" name="applied" data-name="applied" 
+151                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
 label="applied -------------------">
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
@@ -8871,8 +8891,6 @@ label="component ----------------------------------------">SAS/ACCESS Interface 
                         </td>
                      </tr>
                      <tr>
-151                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="1" name="hotfix" data-name="hotfix" label="hot 
 fix -------">L8X004
                         </td>
@@ -8913,6 +8931,8 @@ fix -------">L9D001
 label="applied -------------------">
                         </td>
                         <td class="data" type="char" unformatted-type="char" index="3" name="component" data-name="component" 
+152                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
 label="component ----------------------------------------">SAS/ETS
                         </td>
                      </tr>
@@ -8931,8 +8951,6 @@ MPRINT(SASINSTALLREPORTER):   * analysis is done for these (hot fixes, etc.) *;
 MPRINT(SASINSTALLREPORTER):   ****************************************************************;
 SYMBOLGEN:  Macro variable SYSSCP resolves to LIN X64
 SYMBOLGEN:  Macro variable SYSVLONG resolves to 9.04.01M8P011823
-152                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 MLOGIC(SASINSTALLREPORTER):  %IF condition &SYSSCP = WIN or "&SYSVLONG" > "9.01.01M3" is TRUE
 SYMBOLGEN:  Macro variable SASHOME resolves to /opt/sasinside/SASHome
 SYMBOLGEN:  Macro variable SLSH resolves to /
@@ -8973,6 +8991,8 @@ MPRINT(SASINSTALLREPORTER):   * that are installed *;
 MPRINT(SASINSTALLREPORTER):   ***********************************************************;
 SYMBOLGEN:  Macro variable SYSSCP resolves to LIN X64
 MLOGIC(SASINSTALLREPORTER):  %IF condition &SYSSCP = WIN is FALSE
+153                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
 MLOGIC(SASINSTALLREPORTER):  %LET (variable name is FTYPE)
 MPRINT(SASINSTALLREPORTER):   proc print data=temp2 noobs uniform label;
 MPRINT(SASINSTALLREPORTER):   title6 "4: Possible Other SAS Insitute Applications or Clients Installed";
@@ -8991,8 +9011,6 @@ contents-label="data set work.temp2" path="print.print">
             </div>
             <h1 class="systemtitle">
             </h1>
-153                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
             <h1 class="systemtitle2">
             </h1>
             <h1 class="systemtitle3">
@@ -9033,6 +9051,8 @@ contents-label="data set work.temp2" path="print.print">
                   <td class="systemtitle5"> 
                   </td>
                </tr>
+154                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                <tr>
                   <td class="systemtitle6">4: Possible Other SAS Insitute Applications or Clients Installed
                   </td>
@@ -9051,8 +9071,6 @@ contents-label="data set work.temp2" path="print.print">
             <h1 class="systemtitle2">
             </h1>
             <h1 class="systemtitle3">
-154                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
             </h1>
             <h1 class="systemtitle4">
             </h1>
@@ -9093,6 +9111,8 @@ contents-label="data set work.temp2" path="print.print">
                <tr>
                   <td class="systemtitle6">4: Possible Other SAS Insitute Applications or Clients Installed
                   </td>
+155                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                </tr>
                <tr>
                   <td class="systemtitle7"> 
@@ -9111,8 +9131,6 @@ contents-label="data set work.temp2" path="print.print">
                <ul class="contentitem">
                </ul>
                <div class="contentitem" target="body" url="discovery.html#idx8">
-155                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                </div>
                <div>
                </div>
@@ -9153,6 +9171,8 @@ label="component ---------------------------">SASDeploymentManager
                         <td class="data" type="char" unformatted-type="char" index="1" name="appname" data-name="appname" 
 label="component ---------------------------">SASVersionedJarRepository
                         </td>
+156                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="appname" data-name="appname" 
@@ -9171,8 +9191,6 @@ label="component ---------------------------">SASSecureJavaM6
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="appname" data-name="appname" 
-156                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 label="component ---------------------------">SASSecureJavaM5
                         </td>
                      </tr>
@@ -9213,6 +9231,8 @@ label="component ---------------------------">SASPlatformObjectFramework
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="appname" data-name="appname" 
+157                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
 label="component ---------------------------">SASWebInfrastructurePlatformDataServerConfiguration
                         </td>
                      </tr>
@@ -9231,8 +9251,6 @@ label="component ---------------------------">SASManagementConsole
 label="component ---------------------------">SASAdvancedAnalyticsCommonDataServer
                         </td>
                      </tr>
-157                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="appname" data-name="appname" 
 label="component ---------------------------">SASFactoryMinerData
@@ -9273,6 +9291,8 @@ label="component ---------------------------">SASAddinforMSOfficeServerData
 label="component ---------------------------">SASBIReportServicesWorkspaceConfiguration
                         </td>
                      </tr>
+158                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="appname" data-name="appname" 
 label="component ---------------------------">SASVisualAnalyticsExplorerConfigurationData
@@ -9291,8 +9311,6 @@ label="component ---------------------------">SASVisualDataBuilderConfigurationD
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="appname" data-name="appname" 
 label="component ---------------------------">SASVisualAnalyticsConfigurationData
-158                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                      </tr>
                      <tr>
@@ -9333,6 +9351,8 @@ label="component ---------------------------">SASInformationRetrievalStudioforSA
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="appname" data-name="appname" 
 label="component ---------------------------">SASWebInfrastructureDataBaseJDBCDrivers
+159                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                      </tr>
                      <tr>
@@ -9351,8 +9371,6 @@ label="component ---------------------------">SASStudioBasic
                         </td>
                      </tr>
                      <tr>
-159                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="1" name="appname" data-name="appname" 
 label="component ---------------------------">SASFoundationServices
                         </td>
@@ -9393,6 +9411,8 @@ label="component ---------------------------">SASVisualAnalyticsExtensionsforSer
                         </td>
                      </tr>
                      <tr>
+160                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         <td class="data" type="char" unformatted-type="char" index="1" name="appname" data-name="appname" 
 label="component ---------------------------">SASDeploymentBackupandRecoveryTool
                         </td>
@@ -9411,8 +9431,6 @@ label="component ---------------------------">SASLineageMidTier
                         <td class="data" type="char" unformatted-type="char" index="1" name="appname" data-name="appname" 
 label="component ---------------------------">SASVisualAnalyticsHub
                         </td>
-160                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="appname" data-name="appname" 
@@ -9453,6 +9471,8 @@ label="component ---------------------------">SASVisualAnalyticsPrintingSupport
                         <td class="data" type="char" unformatted-type="char" index="1" name="appname" data-name="appname" 
 label="component ---------------------------">SASVisualAnalyticsReportViewer
                         </td>
+161                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="appname" data-name="appname" 
@@ -9471,8 +9491,6 @@ label="component ---------------------------">SASVisualDataBuilder
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="appname" data-name="appname" 
-161                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 label="component ---------------------------">SASSharedServices
                         </td>
                      </tr>
@@ -9513,6 +9531,8 @@ label="component ---------------------------">SASFactoryMinerMidTier
                      </tr>
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="appname" data-name="appname" 
+162                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
 label="component ---------------------------">SASStudioMidTier
                         </td>
                      </tr>
@@ -9531,8 +9551,6 @@ label="component ---------------------------">SASEnterpriseMinerMidTier
 label="component ---------------------------">SASDecisionManagerCommonMidTierforDecisionManager
                         </td>
                      </tr>
-162                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="appname" data-name="appname" 
 label="component ---------------------------">SASFactoryMinerServicesAPI
@@ -9573,6 +9591,8 @@ label="component ---------------------------">SASEnvironmentManagerLogFileCollec
 label="component ---------------------------">SASEnvironmentManagerAgent
                         </td>
                      </tr>
+163                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="appname" data-name="appname" 
 label="component ---------------------------">SASDeploymentTesterServer
@@ -9591,8 +9611,6 @@ label="component ---------------------------">SASDeploymentTesterClient
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="appname" data-name="appname" 
 label="component ---------------------------">SASFormatsLibraryforNetezza
-163                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         </td>
                      </tr>
                      <tr>
@@ -9633,6 +9651,8 @@ label="component ---------------------------">SASTimeSeriesBatchInterfaceJAVACom
                      <tr>
                         <td class="data" type="char" unformatted-type="char" index="1" name="appname" data-name="appname" 
 label="component ---------------------------">SASFactoryMinerLogicalTypes
+164                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                         </td>
                      </tr>
                      <tr>
@@ -9651,8 +9671,6 @@ label="component ---------------------------">SASDriversForSASConnect
                         </td>
                      </tr>
                      <tr>
-164                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                         <td class="data" type="char" unformatted-type="char" index="1" name="appname" data-name="appname" 
 label="component ---------------------------">SASVisualAnalyticsPrintService
                         </td>
@@ -9693,6 +9711,8 @@ label="component ---------------------------">SASHighPerformanceServerHelpandDoc
                         </td>
                      </tr>
                   </tbody>
+165                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                </table>
             </section>
          </div>
@@ -9711,8 +9731,6 @@ MPRINT(SASINSTALLREPORTER):   * The following code runs if SAS is 9.1.3 and prin
 MPRINT(SASINSTALLREPORTER):   * determined custom product versions and executable build versions. *;
 MPRINT(SASINSTALLREPORTER):   *************************************************************************;
 MPRINT(SASINSTALLREPORTER):   Proc print data=prodstat noobs uniform label;
-165                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 MPRINT(SASINSTALLREPORTER):   title6 "5: Custom Version Information for Selected SAS Institute Products or Components";
 MPRINT(SASINSTALLREPORTER):   run;
 
@@ -9742,17 +9760,15 @@ MPRINT(SASINSTALLREPORTER):   if index(_infile_,'The SAS System') then delete;
 MPRINT(SASINSTALLREPORTER):   if _infile_ =: 'NOTE:' then stop;
 MPRINT(SASINSTALLREPORTER):   put '   ' _infile_;
 MPRINT(SASINSTALLREPORTER):   run;
-166                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 
          <div>
          </div>
 NOTE: The infile JAVALOG is:
-      Filename=/tmp/SAS_work5DA900004252_sasserver.demo.sas.com/#LN00026,
+      Filename=/tmp/SAS_work868C00004AF9_sasserver.demo.sas.com/#LN00026,
       Owner Name=sas,Group Name=sas,
       Access Permission=-rw-rw-r--,
-      Last Modified=23Nov2023:08:31:11,
-      File Size (bytes)=1230
+      Last Modified=23Nov2023:08:42:39,
+      File Size (bytes)=1365
 
          <section id="idx9" class="oo" data-name="batchoutput" label="sas install reporter version 4.0" proc="datastep" 
 output="fileprint1" path="datastep.fileprint1" view="batch_view">
@@ -9897,6 +9913,10 @@ output="fileprint1" path="datastep.fileprint1" view="batch_view">
                      </div>
                      <div class="batch">
                      </div>
+167                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
+                     <div class="batch">
+                     </div>
                      <div class="batch">
                      </div>
                      <div class="batch">
@@ -9914,12 +9934,10 @@ output="fileprint1" path="datastep.fileprint1" view="batch_view">
                   </div>
                </div>
             </section>
-NOTE: 19 lines were written to file PRINT.
-167                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
-NOTE: 22 records were read from the infile JAVALOG.
+NOTE: 20 lines were written to file PRINT.
+NOTE: 24 records were read from the infile JAVALOG.
       The minimum record length was 0.
-      The maximum record length was 103.
+      The maximum record length was 133.
          </div>
 NOTE: The DATA step printed page 23.
 
@@ -9955,6 +9973,8 @@ MPRINT(SASINSTALLREPORTER):   do i=1 to nobs;
 MPRINT(SASINSTALLREPORTER):   set orders point=i nobs=nobs;
 MPRINT(SASINSTALLREPORTER):   put order;
 MPRINT(SASINSTALLREPORTER):   end;
+168                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
 MPRINT(SASINSTALLREPORTER):   stop;
 MPRINT(SASINSTALLREPORTER):   run;
 
@@ -10100,8 +10120,6 @@ output="fileprint2" path="datastep.fileprint2" view="batch_view">
                      <div class="batch">
                      </div>
                      <div class="batch">
-168                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
                      </div>
                      <div class="batch">
                      </div>
@@ -10140,6 +10158,8 @@ SYMBOLGEN:  Macro variable CONFIGLOC resolves to /opt/sasinside/SASConfig
 SYMBOLGEN:  Macro variable SLSH resolves to /
 SYMBOLGEN:  Some characters in the above value which were subject to macro quoting have been unquoted for printing.
 SYMBOLGEN:  Macro variable I resolves to 1
+169                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
 MLOGIC(SASINSTALLREPORTER):  %IF condition %sysfunc(fileexist("&configloc.&slsh.Lev&i")) is TRUE
 MLOGIC(SASINSTALLREPORTER):  %LET (variable name is LEVELS)
 MLOGIC(SASINSTALLREPORTER):  Beginning compilation of TRIM using the autocall file 
@@ -10160,8 +10180,6 @@ MLOGIC(SASINSTALLREPORTER):  %DO loop index variable I is now 2; loop will itera
 SYMBOLGEN:  Macro variable CONFIGLOC resolves to /opt/sasinside/SASConfig
 SYMBOLGEN:  Macro variable SLSH resolves to /
 SYMBOLGEN:  Some characters in the above value which were subject to macro quoting have been unquoted for printing.
-169                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 SYMBOLGEN:  Macro variable I resolves to 2
 MLOGIC(SASINSTALLREPORTER):  %IF condition %sysfunc(fileexist("&configloc.&slsh.Lev&i")) is FALSE
 MLOGIC(SASINSTALLREPORTER):  %DO loop index variable I is now 3; loop will iterate again.
@@ -10200,6 +10218,8 @@ SYMBOLGEN:  Macro variable SLSH resolves to /
 SYMBOLGEN:  Some characters in the above value which were subject to macro quoting have been unquoted for printing.
 SYMBOLGEN:  Macro variable I resolves to 8
 MLOGIC(SASINSTALLREPORTER):  %IF condition %sysfunc(fileexist("&configloc.&slsh.Lev&i")) is FALSE
+170                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
 MLOGIC(SASINSTALLREPORTER):  %DO loop index variable I is now 9; loop will iterate again.
 SYMBOLGEN:  Macro variable CONFIGLOC resolves to /opt/sasinside/SASConfig
 SYMBOLGEN:  Macro variable SLSH resolves to /
@@ -10220,8 +10240,6 @@ MPRINT(SASINSTALLREPORTER):   put "            Configured level(s):  Lev1";
 MPRINT(SASINSTALLREPORTER):   put " ";
 SYMBOLGEN:  Macro variable LEVELS resolves to Lev1
 MLOGIC(SASINSTALLREPORTER):  %DO %WHILE(%length(&levels) > 3) loop beginning; condition is TRUE.  
-170                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 MLOGIC(SASINSTALLREPORTER):  %LET (variable name is LEVEL)
 SYMBOLGEN:  Macro variable LEVELS resolves to Lev1
 MLOGIC(SASINSTALLREPORTER):  %LET (variable name is LEVELS)
@@ -10260,6 +10278,8 @@ SYMBOLGEN:  Macro variable TEXT resolves to
 SYMBOLGEN:  Some characters in the above value which were subject to macro quoting have been unquoted for printing.
 SYMBOLGEN:  Macro variable I resolves to 1
 MLOGIC(VERIFY):  %IF condition NOT %index(&target,%qsubstr(&text,&i,1)) is FALSE
+171                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
 MLOGIC(VERIFY):  %DO loop index variable I is now 2; loop will not iterate again.
 SYMBOLGEN:  Macro variable I resolves to 2
 SYMBOLGEN:  Macro variable TEXT resolves to  
@@ -10280,8 +10300,6 @@ SYMBOLGEN:  Some characters in the above value which were subject to macro quoti
 MLOGIC(SASINSTALLREPORTER):  %IF condition %sysfunc(fileexist("&configloc.&slsh.&level.&slsh.Documents&slsh.Instructions*.html")) 
       is TRUE
 MPRINT(SASINSTALLREPORTER):   length server $ 45 host $ 32 ports $ 20 port $ 20;
-171                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 MPRINT(SASINSTALLREPORTER):   put " ";
 SYMBOLGEN:  Macro variable LEVEL resolves to Lev1
 MPRINT(SASINSTALLREPORTER):   put "Lev1 Instructions.html appears to have these servers configured:";
@@ -10320,6 +10338,8 @@ MPRINT(SASINSTALLREPORTER):   servers = 1;
 MPRINT(SASINSTALLREPORTER):   end;
 MPRINT(SASINSTALLREPORTER):   if index(_infile_,">Host machine") then do until(index(_infile_,'"detailContent">'));
 MPRINT(SASINSTALLREPORTER):   if index(_infile_,'"detailContent">') = 0 then input;
+172                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
 MPRINT(SASINSTALLREPORTER):   dc = index(_infile_,'"detailContent">');
 MPRINT(SASINSTALLREPORTER):   if dc then host = scan(substr(_infile_,dc+16),1,'<&>');
 MPRINT(SASINSTALLREPORTER):   end;
@@ -10340,8 +10360,6 @@ SYMBOLGEN:  Macro variable LEVELS resolves to
 MLOGIC(SASINSTALLREPORTER):  %DO %WHILE() condition is FALSE; loop will not iterate again.
 MLOGIC(SASINSTALLREPORTER):  %LET (variable name is NUM)
 SYMBOLGEN:  Macro variable NUM resolves to 1
-172                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 MLOGIC(SASINSTALLREPORTER):  %LET (variable name is TEST)
 SYMBOLGEN:  Macro variable NUM resolves to 2
 SYMBOLGEN:  Macro variable TEST resolves to Configuration002
@@ -10505,6 +10523,8 @@ output="fileprint3" path="datastep.fileprint3" view="batch_view">
                      </div>
                      <div class="batch">
                      </div>
+173                                                        The SAS System                          08:42 Thursday, November 23, 2023
+
                      <div class="batch">
                      </div>
                      <div class="batch">
@@ -10525,8 +10545,6 @@ MLOGIC(SASINSTALLREPORTER):  %IF condition "&Configuration001 " ^= " " and      
       %sysfunc(getoption(METAPORT)) ^=  and         %sysfunc(getoption(METAPROTOCOL)) ^=  and         
       %sysfunc(getoption(METAREPOSITORY)) ^=  is FALSE
 SYMBOLGEN:  Macro variable PM resolves to 
-173                                                        The SAS System                          08:31 Thursday, November 23, 2023
-
 SYMBOLGEN:  Macro variable LSF resolves to 
 SYMBOLGEN:  Macro variable GMS resolves to 
 MLOGIC(SASINSTALLREPORTER):  %IF condition "&PM.&LSF.&GMS " ^= " " is FALSE
@@ -10546,12 +10564,12 @@ SYMBOLGEN:  Macro variable SYSSCP resolves to LIN X64
 SYMBOLGEN:  Macro variable XCMD resolves to XCMD
 MLOGIC(SASINSTALLREPORTER):  %IF condition &SYSSCP eq WIN and &XCMD = XCMD is FALSE
 MLOGIC(SASINSTALLREPORTER):  Ending execution.
-1433       ods html close;
+1437       ods html close;
       </div>
    </body>
 </html>
-1434       ods html;
+1438       ods html;
 NOTE: Writing HTML Body file: sashtml1.htm
-ERROR: Errors printed on pages 18,20,21.
+ERROR: Errors printed on pages 2,18,21.
 
 NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
