@@ -1,5 +1,11 @@
 # Pipeline publish report ms artifact clients 
-# Developer : José Renato ( DevOps Architect SAS )
+#
+# Azure Developer 
+# : José Renato ( DevOps Architect SAS )
+#
+# Developer Discovery tasks
+# : Douglas Oliveira (Consulting SAS )
+# 
 
 trigger:
 - master
@@ -9,7 +15,7 @@ stages:
   pool:
     vmImage: "ubuntu-latest"
   jobs:
-  - job: Pre_reqs_install
+  - job: report_discovery_ms
     steps:
     - task: UsePythonVersion@0
       inputs:
