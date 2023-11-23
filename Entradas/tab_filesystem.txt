@@ -1,8 +1,8 @@
 Disco# Filesystem     Type      Size  Used Avail Use% Mounted on
 Disco# devtmpfs       devtmpfs   32G     0   32G   0% /dev
-Disco# tmpfs          tmpfs      32G  728K   32G   1% /dev/shm
-Disco# tmpfs          tmpfs      32G   19M   32G   1% /run
+Disco# tmpfs          tmpfs      32G  336K   32G   1% /dev/shm
+Disco# tmpfs          tmpfs      32G   11M   32G   1% /run
 Disco# tmpfs          tmpfs      32G     0   32G   0% /sys/fs/cgroup
 Disco# /dev/sda2      xfs       304G  101G  204G  34% /
-Disco# tmpfs          tmpfs     6.3G   32K  6.3G   1% /run/user/1002
-Disco# tmpfs          tmpfs     6.3G   32K  6.3G   1% /run/user/0
+Disco# tmpfs          tmpfs     6.3G   36K  6.3G   1% /run/user/0
+Disco# tmpfs          tmpfs     6.3G   36K  6.3G   1% /run/user/1002

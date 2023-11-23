@@ -1,9 +1,9 @@
-Configuracoes de Horario# Local time: Wed 2023-11-22 12:52:26 EST
-Configuracoes de Horario# Universal time: Wed 2023-11-22 17:52:26 UTC
-Configuracoes de Horario# RTC time: Wed 2023-11-22 12:52:22
+Configuracoes de Horario# Local time: Thu 2023-11-23 08:31:09 EST
+Configuracoes de Horario# Universal time: Thu 2023-11-23 13:31:09 UTC
+Configuracoes de Horario# RTC time: Thu 2023-11-23 13:31:09
 Configuracoes de Horario# Time zone: America/New_York (EST, -0500)
 Configuracoes de Horario# NTP enabled: yes
-Configuracoes de Horario# NTP synchronized: no
+Configuracoes de Horario# NTP synchronized: yes
 Configuracoes de Horario# RTC in local TZ: no
 Configuracoes de Horario# DST active: no
 Configuracoes de Horario# Last DST change: DST ended at
