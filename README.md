@@ -20,16 +20,19 @@ Automação para extração de dados do ambiente de aplicações SAS
 
 - Opções para clone: HTTPS ou SSH
 
-##
 2. Os programas estão distribuídos na seguinte estrutura:
-- ExtracaoDados.sh 
-Nesse script são feitas as extrações das informações que aparecerão no discovery. 
+- **ExtracaoDados.sh**
+Nesse rotina são feitas as extrações das informações que aparecerão no discovery. 
 As informações são gravadas em arquivos texto que serão lidos pelo script de processamento.
 
-- ProcessamentoDados.sh
-O script de processamento constroi os datasets SAS a partir dos dados de entrada coletados pelo script de extração.
+- **ProcessamentoDados.sh**
+A rotina de processamento constroi os programas e os tabelas SAS a partir dos dados de entrada coletados pelo script de extração e 
 
-- RelatorioDados.sh
+- **RelatorioDados.sh**
+A rotina de construção do relatório a partir das tabelas SAS geradas pelo processo anterior.
 
-- Discovery_Main.sh
+- **Discovery_Main.sh**
+A rotina principal de execução (como se fosse um executável do Windows).
 
+3. 
+- 
