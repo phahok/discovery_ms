@@ -27,7 +27,7 @@ trt.format_text(data: 'SASSERVER.DEMO.SAS.COM',
 just: 'c',
 style_attr:'font_size=36pt color=cxffffff');
 trt.region(y: '7in');
-trt.format_text(data: '23112023_1515',
+trt.format_text(data: '24112023_1346',
 just: c,
 style_attr:'font_size=20pt color=cxffffff');
 trt.layout_end();
